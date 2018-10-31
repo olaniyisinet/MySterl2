@@ -1,0 +1,59 @@
+
+
+
+19/05/14-14:35:09	            RtgsAck-0632-000642 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1430 140519NAMENGLAAXXX3289405345
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS1920145581512
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 19 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #14,508,000.00#
+       50K: Ordering Customer-Name & Address
+            /0016708577
+            KAFFO MINES LIMITED
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1011474396
+            ENGINE FILTERS  AND AMP ACCESSORIE
+            S NIG. LTD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRFS IFO ENGINE FILTERS AND AC
+            //CESSORIES NIG LTD B/O KAFFO MINES
+            // LTD(1011474396)
+	--------------------------- Message Trailer ------------------------	
+       {CHK:280155224F3C}
+       PKI Signature: MAC & PAC-Equivalent

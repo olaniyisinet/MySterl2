@@ -1,0 +1,65 @@
+
+
+
+14/05/14-10:29:00	            RtgsAck-0571-000581 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1044 140514NAMENGLAAXXX3286404052
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : PRDTNGLAXXX
+                  SKYE BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS1420145205423
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 14 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #198,730,000.00#
+       50K: Ordering Customer-Name & Address
+            /0017689536
+            CLASSIC EXCHANGE LIMITED
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000025698
+            PRDTNGLA
+            SKYE BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1771249956
+            EFEON ROYAL INTERNATIONAL COMPANY
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BNG RTGS TO SKYE BANK IFO EFEO
+            //N ROYAL INTERNATIONAL COMPANY BOO
+            // CLASSIC EXCHANGE LIMITED
+	--------------------------- Message Trailer ------------------------	
+       {CHK:114C3D837F5A}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 14/05/14 10:28:42
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3286404052}{4:{177:1405141044}{451:0}}

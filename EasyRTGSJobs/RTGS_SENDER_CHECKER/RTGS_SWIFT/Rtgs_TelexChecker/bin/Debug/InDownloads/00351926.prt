@@ -1,0 +1,58 @@
+
+
+
+24/07/14-15:29:15	            RtgsAck-1926-001937 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1525 140724NAMENGLAAXXX3299422065
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS24201479144
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 24 July 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #57,923,907.78#
+       50K: Ordering Customer-Name & Address
+            /0007288248
+            CARDINALSTONE SEC. LTD CL ACCT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /2002087162
+            ESTATE OF MRS FRANCISCA AYANBADEJO
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRFR TO ESTATE OF MRS. FRANCIS
+            //CA AYANBADEJO BO CARDINALSTONE SE
+            //C. LTD (2002087162)
+	--------------------------- Message Trailer ------------------------	
+       {CHK:433C8D555251}
+       PKI Signature: MAC & PAC-Equivalent

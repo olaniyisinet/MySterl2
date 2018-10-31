@@ -1,0 +1,65 @@
+
+
+
+13/05/14-11:13:16	            RtgsAck-0560-000570 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1128 140513NAMENGLAAXXX3286403768
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS13201455337
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 13 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #30,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0017995747
+            TREPOLE WELL SERVICES LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1011999998
+            ROJANKO NIG. LTD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRANSFER TO ZENITH BANK I
+            //FO ROJANKO NIGERIA LTD BOO TREPOL
+            //E WELL SERVICES LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:6221F1AC9345}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 13/05/14 11:13:05
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3286403768}{4:{177:1405131128}{451:0}}

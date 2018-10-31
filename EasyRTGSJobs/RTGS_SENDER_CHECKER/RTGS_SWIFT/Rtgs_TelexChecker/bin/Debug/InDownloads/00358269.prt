@@ -1,0 +1,56 @@
+
+
+
+29/08/14-13:39:35	            RtgsAck-8269-002568 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1336 140829NAMENGLAAXXX3309430384
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS2920148474932
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 29 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #30,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0007079314
+            AZMAN OIL AND GAS LTD.
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1010023333
+            TOTAL  NIGERIA PLC .
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS BOO AZMAN OIL - GAS LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:E2220B088228}
+       PKI Signature: MAC & PAC-Equivalent

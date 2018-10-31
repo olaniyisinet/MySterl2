@@ -1,0 +1,65 @@
+
+
+
+05/05/14-14:30:36	            RtgsAck-0444-000454 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1446 140505NAMENGLAAXXX3285401466
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : GTBINGLAXXX
+                  GUARANTY TRUST BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS520145593753
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 05 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #54,264,398.46#
+       50K: Ordering Customer-Name & Address
+            /0023323824
+            CYBERNETICS INTL SERVICES LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024921
+            GTBINGLA
+            GUARANTY TRUST BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0023266202
+            PET. EQUA FUND(MGT) BOARD A/C
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRSF IFO PEF(MGT)BOARD B/
+            //O CYBERNETICS INTERNATIONA SERVIC
+            //ES LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:C626A7C2CF2D}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 05/05/14 14:30:22
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3285401466}{4:{177:1405051446}{451:0}}

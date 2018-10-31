@@ -1,0 +1,59 @@
+
+
+
+25/06/14-14:59:21	            RtgsAck-1343-001353 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1456 140625NAMENGLAAXXX3297415338
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS2520146393818
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 25 June 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #42,400,000.00#
+       50K: Ordering Customer-Name & Address
+            /0009799124
+            NNPC L.G REFUND ACCOUNT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1011424566
+            20 LOCAL GOV AND APOST JOINT DEV. 
+            A/C
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/FT BOO LG NNPC REFUND ACCT IFO
+            // 20 LOCAL GOVT JOINT DEV ACCT 101
+            //1424566
+	--------------------------- Message Trailer ------------------------	
+       {CHK:9AB0217ACEDD}
+       PKI Signature: MAC & PAC-Equivalent

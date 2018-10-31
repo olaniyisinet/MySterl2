@@ -1,0 +1,59 @@
+
+
+
+01/09/14-13:53:51	            RtgsAck-8283-002582 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1351 140901NAMENGLAAXXX3310430651
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ICITNGLAXXX
+                  UNITY BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS120149245431
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 01 September 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #400,869,729.88#
+       50K: Ordering Customer-Name & Address
+            /0010049665
+            KD.ST.LGC JOINT STATUTORY ACC
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000025241
+            ICITNGLA
+            UNITY BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0000485892
+            BUREAU OF LOCAL GOVT PENSIONS
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRF IFO L/GOVT STAFF PENS
+            //ION BOARD-UNITY BANK PLC-BOO KADS
+            //T.LGC.JOINT ST ACCT.(KADUNA MINIS
+            //TRY OF FINANCE)
+	--------------------------- Message Trailer ------------------------	
+       {CHK:320303E26BE8}
+       PKI Signature: MAC & PAC-Equivalent

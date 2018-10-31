@@ -1,0 +1,58 @@
+
+
+
+09/06/14-12:05:35	            RtgsAck-1062-001072 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1201 140609NAMENGLAAXXX3295411225
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : DBLNNGLAXXX
+                  DIAMOND BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS92014664178
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 09 June 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #50,962,231.79#
+       50K: Ordering Customer-Name & Address
+            /0000741663
+            LANRE SHITTU MOTORS NIG. LTD.
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024426
+            DBLNNGLA
+            DIAMOND BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0032563569
+            LANRE SHITTU MOTORS AND HAULAGE OIL
+             AND
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF IFO LANRE SHITTU MOTORS NI
+            //G LTD AND HAULAGE OIL AND GAS
+	--------------------------- Message Trailer ------------------------	
+       {CHK:BEB1B638BBFB}
+       PKI Signature: MAC & PAC-Equivalent

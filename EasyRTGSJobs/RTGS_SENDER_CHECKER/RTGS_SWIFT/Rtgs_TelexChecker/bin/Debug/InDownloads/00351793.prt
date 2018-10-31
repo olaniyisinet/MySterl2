@@ -1,0 +1,57 @@
+
+
+
+17/07/14-10:30:36	            RtgsAck-1793-001803 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1027 140717NAMENGLAAXXX3298420472
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : FIDTNGLAXXX
+                  FIDELITY BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS1720147463470
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 17 July 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #28,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0008691991
+            SIMRIA PROJECTS LIMITED
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024646
+            FIDTNGLA
+            FIDELITY BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /5080096038
+            GEO BDC LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRANSFER BY ORDER OF SIMRIA PR
+            //OJECTS LIMITED
+	--------------------------- Message Trailer ------------------------	
+       {CHK:B9C9215948F3}
+       PKI Signature: MAC & PAC-Equivalent

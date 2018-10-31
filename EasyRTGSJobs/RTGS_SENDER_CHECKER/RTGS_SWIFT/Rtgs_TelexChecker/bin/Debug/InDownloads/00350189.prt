@@ -1,0 +1,64 @@
+
+
+
+16/04/14-13:52:04	            RtgsAck-0189-000190 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1406 140416NAMENGLAAXXX3282397572
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : GTBINGLAXXX
+                  GUARANTY TRUST BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS1620144452328
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 16 April 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #52,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0007677899
+            ASO SAVINGS AND LOANS PLC
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024921
+            GTBINGLA
+            GUARANTY TRUST BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0131533377
+            ABDULAZIZ IBRAHIM AND COMPANY
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS IFO ABDULAZIZ IBRAHIM - C
+            //O
+	--------------------------- Message Trailer ------------------------	
+       {CHK:86BFE91DAE50}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 16/04/14 13:51:45
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3282397572}{4:{177:1404161406}{451:0}}

@@ -1,0 +1,58 @@
+
+
+
+07/07/14-11:07:51	            RtgsAck-1619-001629 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1104 140707NAMENGLAAXXX3297417791
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS720147575750
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 07 July 2014
+            Currency       : NGN (NAIRA)
+            Amount         :         #1,000,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0027303811
+            BOSG:L.G NON-OIL REV.DIST.ACCT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1011424566
+            20 LOCAL GOV AND APOST JOINT DEV. 
+            A/C
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/FT BOO BOST LG NON-OIL REV ACC
+            //T IFO 20 LG DEV PROJ ACCT
+	--------------------------- Message Trailer ------------------------	
+       {CHK:2864C7266DEC}
+       PKI Signature: MAC & PAC-Equivalent

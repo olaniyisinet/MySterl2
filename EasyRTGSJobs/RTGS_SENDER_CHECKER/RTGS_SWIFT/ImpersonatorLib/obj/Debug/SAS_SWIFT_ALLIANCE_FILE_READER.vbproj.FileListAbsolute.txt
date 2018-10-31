@@ -1,0 +1,3 @@
+D:\ScheduledJobsT24\RTGS_SWIFT\ImpersonatorLib\obj\Debug\SAS_SWIFT_ALLIANCE_FILE_READER.vbprojResolveAssemblyReference.cache
+D:\ScheduledJobsT24\RTGS_SWIFT\ImpersonatorLib\obj\Debug\ImpersonatorLib.Resources.resources
+D:\ScheduledJobsT24\RTGS_SWIFT\ImpersonatorLib\obj\Debug\SAS_SWIFT_ALLIANCE_FILE_READER.vbproj.GenerateResource.Cache

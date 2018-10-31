@@ -1,0 +1,65 @@
+
+
+
+16/05/14-10:20:29	            RtgsAck-0605-000615 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1035 140516NAMENGLAAXXX3286404847
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : DBLNNGLAXXX
+                  DIAMOND BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS162014515855
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 16 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #15,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0019663912
+            DIFEX WORLDWIDE SOLUTIONS LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024426
+            DBLNNGLA
+            DIAMOND BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0036779287
+            ABUBAKAR M MUSBAHU
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRANSFER TO DIAMOND BANK 
+            //IFO ABUBAKAR M MUSBABU BOO DIFEX 
+            //WORLDWIDE SOLUTIONS LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:C80D67ED1091}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 16/05/14 10:20:12
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3286404847}{4:{177:1405161035}{451:0}}

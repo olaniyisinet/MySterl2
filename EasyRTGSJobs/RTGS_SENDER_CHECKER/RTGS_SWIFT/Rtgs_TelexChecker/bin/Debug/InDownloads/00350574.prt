@@ -1,0 +1,66 @@
+
+
+
+14/05/14-10:39:18	            RtgsAck-0574-000584 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1054 140514NAMENGLAAXXX3286404055
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS1420145443367
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 14 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #25,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0017519273
+            LOCAL GOVT EXCESS CRUDE OIL
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1013284607
+            LAPLACE CONSTRUCTORS LTD OSUN OP A/
+            C
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/ADDITIONAL ADVANCE PAYMENT ON 
+            //THE CONSTRUCTION OF 10KM ROAD IN 
+            //BORIPE LG
+	--------------------------- Message Trailer ------------------------	
+       {CHK:5E6A5DF8F77A}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 14/05/14 10:39:03
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3286404055}{4:{177:1405141054}{451:0}}

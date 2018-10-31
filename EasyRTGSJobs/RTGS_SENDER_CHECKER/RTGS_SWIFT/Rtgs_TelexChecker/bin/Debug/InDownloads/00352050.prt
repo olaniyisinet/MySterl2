@@ -1,0 +1,57 @@
+
+
+
+30/07/14-16:34:06	            RtgsAck-2050-002061 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1630 140730NAMENGLAAXXX3300422843
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ECOCNGLAXXX
+                  ECOBANK NIGERIA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS3020147432425
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 30 July 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #27,307,903.90#
+       50K: Ordering Customer-Name & Address
+            /0020405077
+            KAD. SUBEB UBE MATCHING GRANT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024495
+            ECOCNGLA
+            ECOBANK NIGERIA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0182007100
+            ILSON INTERGRATED VENT
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BNG TRSF BOO KSUBEB- IFO ILSON
+            // INTEGRATED VENTURES- ECOBANK
+	--------------------------- Message Trailer ------------------------	
+       {CHK:E39B159A965C}
+       PKI Signature: MAC & PAC-Equivalent

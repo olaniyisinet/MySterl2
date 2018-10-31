@@ -1,0 +1,15 @@
+5/16/2016 1:30:16 PM: System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at swift.Page_Load(Object sender, EventArgs e) in D:\LiveAppsT24\easiRTGS_v2\swift.aspx.vb:line 8
+5/16/2016 1:32:57 PM: System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at swift.Page_Load(Object sender, EventArgs e) in D:\LiveAppsT24\easiRTGS_v2\swift.aspx.vb:line 8
+5/16/2016 1:35:25 PM: System.Threading.ThreadAbortException: Thread was being aborted.
+   at System.Threading.Thread.AbortInternal()
+   at System.Threading.Thread.Abort(Object stateInfo)
+   at System.Web.HttpResponse.AbortCurrentThread()
+   at swift.Page_Load(Object sender, EventArgs e) in D:\LiveAppsT24\easiRTGS_v2\swift.aspx.vb:line 8

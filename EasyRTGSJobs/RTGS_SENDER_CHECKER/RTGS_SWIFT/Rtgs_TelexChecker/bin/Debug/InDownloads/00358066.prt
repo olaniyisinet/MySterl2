@@ -1,0 +1,60 @@
+
+
+
+18/08/14-12:08:19	            RtgsAck-8066-002365 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1205 140818NAMENGLAAXXX3308427428
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : CITINGLAXXX
+                  CITIBANK NIGERIA LIMITED
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS1820148464170
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 18 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #17,636,712.25#
+       50K: Ordering Customer-Name & Address
+            /0027786803
+            RITE FOODS LTD-BOI INTER.FUND
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000023924
+            CITINGLA
+            CITIBANK NIGERIA LIMITED
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0110680094
+            MAERSK NIGERIA LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/CUSTOMER CODE-NG00170446INVOIC
+            //E NO-5904535709,5904532777,590454
+            //9167,590545187,5905459158,5904549
+            //161,590454768,59045447,DEPOSIT(56
+            //3785463)BILL OF LADING NO-5637854
+	--------------------------- Message Trailer ------------------------	
+       {CHK:8F45487BF054}
+       PKI Signature: MAC & PAC-Equivalent

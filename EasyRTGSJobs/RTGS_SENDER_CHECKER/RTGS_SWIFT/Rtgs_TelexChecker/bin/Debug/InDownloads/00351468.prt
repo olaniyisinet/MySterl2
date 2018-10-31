@@ -1,0 +1,56 @@
+
+
+
+01/07/14-14:49:28	            RtgsAck-1468-001478 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1446 140701NAMENGLAAXXX3297416611
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : FCMBNGLAXXX
+                  FIRST CITY MONUMENT BANK
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS12014712429
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 01 July 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #68,514,412.30#
+       50K: Ordering Customer-Name & Address
+            /0010049665
+            KD.ST.LGC JOINT STATUTORY ACC
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024763
+            FCMBNGLA
+            FIRST CITY MONUMENT BANK
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0940891011
+            ZARIA MAIN A/C
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF IFO ZARIA L/GOVT-FCMB PLC
+	--------------------------- Message Trailer ------------------------	
+       {CHK:C4A28358883C}
+       PKI Signature: MAC & PAC-Equivalent

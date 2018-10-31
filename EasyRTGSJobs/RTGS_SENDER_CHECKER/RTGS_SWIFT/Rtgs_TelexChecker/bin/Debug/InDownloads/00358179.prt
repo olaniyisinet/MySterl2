@@ -1,0 +1,57 @@
+
+
+
+22/08/14-13:34:03	            RtgsAck-8179-002478 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1331 140822NAMENGLAAXXX3308428818
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : FBNINGLAXXX
+                  FIRST BANK OF NIGERIA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS222014825772
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 22 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #250,739,726.03#
+       50K: Ordering Customer-Name & Address
+            /0012126021
+            FCNL/NLPC PFA LTD OKOTA
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024749
+            FBNINGLA
+            FIRST BANK OF NIGERIA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /2012247675
+            FPCNL/NLPC RSA RETIREE FUND A/C
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS IFO FPCNL/NLPC PFA/ RETIR
+            //EE FUND,BOO FCNL/NLPC PFA LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:0D04020E4D65}
+       PKI Signature: MAC & PAC-Equivalent

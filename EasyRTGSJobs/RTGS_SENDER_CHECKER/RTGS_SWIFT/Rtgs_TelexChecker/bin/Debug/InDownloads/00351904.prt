@@ -1,0 +1,59 @@
+
+
+
+24/07/14-12:39:21	            RtgsAck-1904-001915 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1236 140724NAMENGLAAXXX3299421986
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : DBLNNGLAXXX
+                  DIAMOND BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS242014765278
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 24 July 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #250,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0017974227
+            NIG.BULK ELECTRICITY TRADN PLC
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024426
+            DBLNNGLA
+            DIAMOND BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0028381180
+            NIG BULK ELECT TRADING PLC OVERHEAD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRANSFER TO DIAMOND BANK BOO N
+            //IGERIAN BULK ELECTRICITY TRADING(
+            //0017974227) IFO NIGERIAN BULK ELE
+            //CTRICITY TRADING PLC(0028381180).
+	--------------------------- Message Trailer ------------------------	
+       {CHK:B1A04D77B677}
+       PKI Signature: MAC & PAC-Equivalent

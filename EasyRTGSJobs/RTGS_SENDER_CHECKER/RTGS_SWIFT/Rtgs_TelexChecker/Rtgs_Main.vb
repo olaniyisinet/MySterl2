@@ -1,0 +1,1707 @@
+﻿Imports System.Data.SqlClient
+Imports System.IO
+Imports System.Net
+Imports System.Security
+Imports SwiftLib
+Imports System.Text
+Imports System.Net.Mail
+Imports System.Net.Mime
+Imports System.Threading
+Imports WFSystem
+Imports iTextSharp.text.pdf
+
+Module Rtgs_Main
+
+
+    Private ERROR_COUNT As Integer
+    Private ERROR_MAIL As String = String.Empty
+    Private WORK_FOLDER As String = ""
+    Private CRITICAL_EXCEPTION_COUNT As Integer = 0
+    'Declare some directories to use to hold the folder for PDFs
+    Private PDF_DIR As String = String.Empty
+
+    'Declare for holding the telexCopy
+    Private TELEX_DIR As String = String.Empty
+
+    Private LOG_DIR As String = String.Empty
+    Private Const ERROR_COUNT_KEY As String = "ERROR_COUNT"
+    Private Const ERROR_MAIL_KEY As String = "ERROR_MAIL"
+    Private Const LOG_PATH As String = "LOG_PATH"
+
+
+    Dim settingDict As New Dictionary(Of String, String)
+
+    Private Sub sendErrorMail(ByVal exMsg As String)
+        Dim smtp As New SmtpClient
+        smtp.Host = "10.0.0.88"
+        Dim msg As New MailMessage
+        msg.Subject = "Novel Trade File Checker"
+        msg.Body = exMsg
+        Dim addressAr() As String = Nothing
+        Dim mailAddrCol As New MailAddressCollection
+        mailAddrCol.Add(ERROR_MAIL)
+        For Each mailAddr As MailAddress In mailAddrCol
+            msg.To.Add(mailAddr)
+
+        Next
+        msg.From = New MailAddress("TradeServices@sterlingbankng.com")
+        Try
+            smtp.Send(msg)
+        Catch ex As Exception
+            Dim msge As String = ex.Message
+            msge = msge
+        End Try
+
+    End Sub
+
+    Private Sub InitSettings()
+        ERROR_COUNT = ReadSetting(ERROR_COUNT_KEY)
+        ERROR_MAIL = ReadSetting(ERROR_MAIL_KEY)
+    End Sub
+
+    Private Function GetConnectionStringFromFile() As String
+        Dim conn As String = String.Empty
+        Dim Path As String = "conn.txt"
+        If File.Exists(Path) Then
+            conn = File.ReadAllText(Path)
+            'Else
+            '    Return "Data Source=10.0.0.230; Initial Catalog=TradeServicesTest; User Id=sa; Password=($terl1ng)"
+        End If
+        Return conn
+    End Function
+    Private Function ReadSetting(ByVal settingName As String) As String
+        Dim setting As String = String.Empty
+        Dim settingFilename As String = "settings.txt"
+
+        Dim settingLineArray() As String = Nothing
+        Dim lines() As String = Nothing
+        If settingDict IsNot Nothing Then
+            If settingDict.Count > 0 Then
+                If settingDict.ContainsKey(settingName.Trim.ToUpper) Then
+                    Return settingDict(settingName.Trim.ToUpper)
+                Else
+                    Select Case settingName.Trim().ToUpper
+                        Case ERROR_COUNT_KEY
+                            Return "10"
+                        Case ERROR_MAIL
+                            Return "oluwakayode.osagbemi@sterlingbankng.com, emmanuel.omofuriota@sterlingbankng.com"
+                    End Select
+                End If
+            Else
+                If File.Exists(settingFilename) Then
+                    lines = File.ReadAllLines(settingFilename)
+                    For Each line In lines
+                        If Not String.IsNullOrEmpty(line) Then
+                            settingLineArray = line.Split("=")
+                            If settingLineArray IsNot Nothing AndAlso settingLineArray.Length = 2 Then
+                                settingDict.Add(settingLineArray(0), settingLineArray(1))
+                            End If
+                        End If
+                    Next
+                    setting = ReadSetting(settingName)
+                Else
+                    Select Case settingName.Trim().ToUpper
+                        Case ERROR_COUNT_KEY
+                            Return "10"
+                        Case ERROR_MAIL
+                            Return "oluwakayode.osagbemi@sterlingbankng.com, emmanuel.omofuriota@sterlingbankng.com"
+                    End Select
+                End If
+            End If
+
+        Else
+            settingDict = New Dictionary(Of String, String)
+            Return ReadSetting(settingName)
+        End If
+
+
+        Return setting
+    End Function
+    Private Sub ExitIfThereIsAClone()
+        Console.WriteLine("Check for clone.")
+        If (System.Diagnostics.Process.GetProcessesByName(System.IO.Path.GetFileNameWithoutExtension(System.Reflection.Assembly.GetEntryAssembly().Location)).Count() > 1) Then
+            System.Diagnostics.Process.GetCurrentProcess().Kill()
+        End If
+    End Sub
+
+    Private Sub RunMainTask()
+        Console.WriteLine("Doing main work...")
+        Console.ReadKey()
+
+    End Sub
+    Public Enum OutputFolderType
+        Normal
+        Expanded
+        Processed
+    End Enum
+    Sub Main()
+
+        'open the folder that contains the output SWIFT files generated by the SWIFT system
+        ExitIfThereIsAClone()
+        InitSettings()
+
+        PDF_DIR = GetPdfDirectory()
+        TELEX_DIR = GeTelexDirectory()
+        LOG_DIR = GetLogDirectory()
+
+        Logg("STARTED")
+        While True
+            Dim filePathToCheck As String = String.Empty
+            Dim filePathForProcessedSwift As String = String.Empty
+            Dim filePathForExpandedSwift As String = String.Empty
+            Dim pendingFilenameArray() As String = Nothing
+            Dim referenceDict As New Dictionary(Of String, String)
+            Dim cn As SqlConnection = New SqlConnection(GetConnectionStringFromFile())
+            Dim cmd As SqlCommand = Nothing
+            Dim sqlSpGetSwiftSettings As String = Utils.GetInProcessQuery()
+            Dim dsSettings As New DataSet
+            Try
+                cn.Open()
+                cmd = New SqlCommand(sqlSpGetSwiftSettings, cn)
+                cmd.CommandTimeout = 0
+                cmd.CommandType = CommandType.Text
+                cmd.CommandTimeout = 0
+                Dim sqlAdapter As SqlDataAdapter = New SqlDataAdapter()
+                sqlAdapter.SelectCommand = cmd
+                sqlAdapter.Fill(dsSettings)
+            Catch ex As Exception
+                Logg("SWIFT SETTINGS" & vbCrLf & "Exception: " & ex.Message)
+                CRITICAL_EXCEPTION_COUNT += 1
+                If CRITICAL_EXCEPTION_COUNT >= ERROR_COUNT Then
+
+                End If
+            Finally
+                If cn IsNot Nothing Then
+                    cn.Close()
+                End If
+            End Try
+
+            filePathToCheck = Utils.GetTelexFolder()
+
+            If Not String.IsNullOrEmpty(filePathToCheck) Then
+                pendingFilenameArray = OpenPendingFiles(filePathToCheck, dsSettings)
+                pendingFilenameArray = SortArrayOfPendingFileNames(pendingFilenameArray)
+
+                If pendingFilenameArray IsNot Nothing AndAlso pendingFilenameArray.Length > 0 Then
+                    referenceDict = ProcessPendingFiles(pendingFilenameArray, dsSettings, PDF_DIR, TELEX_DIR)
+                    pendingFilenameArray = Nothing
+
+                Else
+
+                    Try
+                        Thread.Sleep(10000)
+                    Catch ex As Exception
+                        Logg("An error occurred when trying to sleep for 10000 milliseconds.")
+                    End Try
+                End If
+            Else
+
+            End If
+        End While
+
+
+
+        Logg("ENDED")
+    End Sub
+    ''' <summary>
+    ''' Reads the filepath (or directory) specified and gets the names of the files there.
+    ''' 
+    ''' </summary>
+    ''' <param name="filePathToCheck"></param>
+    ''' <returns>An array of String that contains the file names of the files in that folder. Please check for nothing being returned.</returns>
+    ''' <remarks></remarks>
+    Private Function OpenPendingFiles(ByVal filePathToCheck As String, ByVal dsSwiftSettings As DataSet) As String()
+        Dim fnameArr() As String = Nothing
+
+        Dim host As String = String.Empty
+        host = Utils.GetFTPHost
+        'TODO: Remove this line
+        'host = AppSettings.SwiftServerUrl
+
+
+        If Not String.IsNullOrEmpty(filePathToCheck) Then
+
+            fnameArr = FtpDownloadFileList(host, "", filePathToCheck, Utils.Username, Utils.Password)
+
+
+        Else
+
+            'Logg("The filepath to check is invalid.")
+        End If
+
+        Return fnameArr
+
+    End Function
+
+
+    Public Function FtpDownloadFileList(ByVal ftpHost As String, ByVal filenameToDownload As String, ByVal downloadFolderName As String, ByVal user As String, ByVal pwd As String) As String()
+        Dim filenames() As String = Nothing
+        Dim status As Boolean = False
+        Dim reader As StreamReader = Nothing
+        Dim responseStream As Stream = Nothing
+        Dim response As FtpWebResponse = Nothing
+        Try
+            'Get the object used to communicate with the server.
+            Dim ftpUrl As String = "ftp://" & ftpHost & "/" & downloadFolderName & "/"
+
+            Dim request As FtpWebRequest = DirectCast(WebRequest.Create(ftpUrl), FtpWebRequest)
+            request.Method = WebRequestMethods.Ftp.ListDirectory
+            request.Proxy = Nothing
+            ' This example assumes the FTP site uses anonymous logon.
+            request.Credentials = New NetworkCredential(user, pwd) ' New NetworkCredential("domft", "($terl1ng)")
+
+            response = DirectCast(request.GetResponse(), FtpWebResponse)
+
+            responseStream = response.GetResponseStream()
+            reader = New StreamReader(responseStream)
+            Dim folderList As String = reader.ReadToEnd()
+
+            'Console.WriteLine("Download Complete, status {0}", response.StatusDescription)
+
+            filenames = folderList.Split(vbCrLf)
+
+
+        Catch ex As Exception
+            'TODO: log exception
+            Logg("There was an error while downloading the file list: FtpDownloadFileList(): " & ex.Message)
+        Finally
+            If reader IsNot Nothing Then reader.Close()
+            If responseStream IsNot Nothing Then responseStream.Close()
+            If response IsNot Nothing Then response.Close()
+        End Try
+
+        Return filenames
+    End Function
+
+
+    Public Function FtpDeleteFile2(ByVal ftpHost As String, ByVal filenameToDelete As String, ByVal folder As String) As FtpStatusCode
+        Dim statusCode As FtpStatusCode = FtpStatusCode.AccountNeeded
+        Dim uobj As New Utils
+        Dim user As String = String.Empty
+        Dim pwd As String = String.Empty
+        Dim ftp As FtpWebRequest = DirectCast(WebRequest.Create("ftp://" & ftpHost & "/" & folder & "/" & Path.GetFileName(filenameToDelete)), FtpWebRequest)
+        Dim ftpResponse As FtpWebResponse = Nothing
+        If filenameToDelete <> "" Then
+            Try
+                ftp.Credentials = New System.Net.NetworkCredential(Utils.Username, Utils.Password)
+                ftp.Proxy = Nothing
+                ftp.Method = WebRequestMethods.Ftp.DeleteFile
+                ftpResponse = CType(ftp.GetResponse(), FtpWebResponse)
+
+                statusCode = ftpResponse.StatusCode
+
+            Catch ex As Exception
+                '
+                Logg("An exception occurred while deleting a file from FTP server. Filename: " + ftp.RequestUri.ToString())
+
+            Finally
+
+                If ftpResponse IsNot Nothing Then ftpResponse.Close()
+
+            End Try
+        End If
+        Return statusCode
+    End Function
+
+    Public Function FtpDeleteFile(ByVal ftpHost As String, ByVal filenameToDelete As String, ByVal folder As String) As Boolean
+        Dim status As Boolean = False
+        Dim ftp As FtpWebRequest = DirectCast(WebRequest.Create("ftp://" & ftpHost & "/" & folder & "/" & Path.GetFileName(filenameToDelete)), FtpWebRequest)
+        Dim ftpResponse As FtpWebResponse = Nothing
+        If filenameToDelete <> "" Then
+            Try
+                ftp.Credentials = New System.Net.NetworkCredential(Utils.Username, Utils.Password)
+                ftp.Proxy = Nothing
+                ftp.Method = WebRequestMethods.Ftp.DeleteFile
+                ftpResponse = CType(ftp.GetResponse(), FtpWebResponse)
+
+                Dim ftpStatus As FtpStatusCode = ftpResponse.StatusCode
+                Dim ftpStatusDesc As String = ftpResponse.StatusDescription
+                Select Case ftpStatus
+                    Case FtpStatusCode.FileActionOK
+                        status = True
+                    Case Else
+                        status = False
+                End Select
+
+            Catch ex As Exception
+                '
+                Logg("An exception occurred while deleting a file from FTP server. Filename: " + ftp.RequestUri.ToString())
+
+            Finally
+
+                If ftpResponse IsNot Nothing Then ftpResponse.Close()
+            End Try
+        End If
+        Return status
+    End Function
+    ''' <summary>
+    ''' Returns a dictionary that contains the senders references as key and the status as the value.
+    ''' </summary>
+    ''' <param name="pendingFilenameArray">An array of file names.</param>
+    ''' <returns>Please check for NULL object instance being returned.</returns>
+    ''' <remarks></remarks>
+    Private Function ProcessPendingFiles(ByVal pendingFilenameArray As String(), ByVal dsSettings As DataSet, ByVal pdfString As String, ByVal telexString As String) As Dictionary(Of String, String)
+        Dim sbkRefStatusDict As New Dictionary(Of String, String)
+        Dim fileContent As String = String.Empty
+        Dim sendersRef As String = String.Empty
+        Dim ftphost As String = ""
+        Dim username As String = ""
+        Dim password As String = ""
+        Dim outputfolder As String = ""
+        Dim processedFolder As String = String.Empty
+        Dim telexCopyFilename As String = String.Empty
+
+        If pendingFilenameArray IsNot Nothing AndAlso pendingFilenameArray.Length > 0 AndAlso dsSettings.Tables.Count > 0 AndAlso dsSettings.Tables(0).Rows.Count > 0 Then
+            ftphost = Utils.GetFTPHost
+            username = Utils.Username
+            password = Utils.Password
+            outputfolder = Utils.GetOutputFolder() ' OutFolder   'CStr(dsSettings.Tables(0).Rows(0)("swiftOutputFolder"))
+            processedFolder = Utils.GetProcessedFolder() 'CStr(dsSettings.Tables(0).Rows(0)("swiftProcessed"))
+
+
+            'Now read the temporary folder for this system.
+            Dim systemTempFolder As String = telexString 'Path.GetTempPath()
+
+            If Not systemTempFolder.EndsWith(Path.DirectorySeparatorChar) Then
+                systemTempFolder = systemTempFolder & Path.DirectorySeparatorChar '"\"
+            End If
+            Dim requestId As Long
+            For Each filename As String In pendingFilenameArray
+
+
+                filename = filename.Trim()
+                If Not String.IsNullOrEmpty(filename) Then
+
+
+                    Download(systemTempFolder, filename, ftphost, username, password, outputfolder)
+
+                    'TODO at this stage, read the request id from the filename.
+
+                    'Now we do not need to read using the MT103 class anymore, just normal text processing.
+                    'requestId = ReadRequestIdFromSendersReferenceInMt103File(systemTempFolder & filename)
+                    telexCopyFilename = systemTempFolder & filename
+
+                    'CheckFileSize(telexCopyFilename)
+                    Dim sbk As String = ReadSendersReferenceFromTelexCopy(telexCopyFilename)
+
+                    If Not String.IsNullOrEmpty(sbk) Then
+                        'split the ref by the / characther
+                        Dim sbkParts() As String = sbk.Split("/"c)
+                        Dim moved As Boolean = False
+                        Dim email As String = String.Empty
+                        Dim custname As String = String.Empty
+                        Dim amt As String = String.Empty
+                        Dim currency As String = String.Empty
+                        Dim reqDate As Date = Nothing
+
+                        If IsSendersReferenceValid(sbk) Then 'IsSendersReferenceValid 'IsRequestIdValid(requestId)
+                            email = GetRequestEmail(requestId, sbk)
+                            custname = GetCustomerName(sbk)
+                            amt = GetTransferAmt(sbk)
+                            currency = GetTransferCurrency(sbk)
+                            reqDate = GetTransferCreationDate(sbk)
+
+                            Dim mailSent As Boolean = False
+                            'Do
+                            Dim destFilename As String = Path.GetFileNameWithoutExtension(telexCopyFilename)
+
+                            'Update the telex copy column to contain the text of the telex copy.
+                            UpdateTelexCopyColumn(sbk, telexCopyFilename)
+                            If Not telexString.EndsWith(Path.DirectorySeparatorChar) Then
+                                telexString = telexString & Path.DirectorySeparatorChar
+                            End If
+
+                            destFilename = telexString & destFilename & ".pdf"
+                            ConvertFileToPdf(telexCopyFilename, destFilename)
+
+                            mailSent = SendFilesToTheirCustomersAsAttachment(New String() {destFilename}, email, custname, amt, currency, requestId)
+                            'Loop Until mailSent = True
+
+                            If mailSent Then
+                                Dim statusChanged As Boolean = False
+
+                                Do
+                                    statusChanged = UpdateAssociatedFtRequests(sbk, requestId, "SwiftComplete")
+                                    If Not statusChanged Then
+                                        Thread.Sleep(10000) 'sleep for 10seconds by which time we hope that the connection can be restored then try again.
+                                    Else
+                                        'try and delete the file that was attached to the mail since the mail has been sent successfully
+                                        Try
+                                            Dim isMovedProcessedFile As Boolean = MoveProcessedFileToSwiftProcessedFolder(systemTempFolder & filename, outputfolder, processedFolder)
+                                            If isMovedProcessedFile Then
+                                                If File.Exists(telexCopyFilename) Then
+                                                    File.Delete(telexCopyFilename)
+                                                End If
+                                            End If
+
+                                        Catch ex As Exception
+                                            Logg("There was a problem when try to delete the file: " & telexCopyFilename)
+                                        End Try
+
+                                        Try
+                                            If File.Exists(destFilename) Then
+                                                File.Delete(destFilename)
+                                            End If
+                                        Catch ex As Exception
+                                            Logg("There was a problem when try to delete the file: " & destFilename)
+                                        End Try
+                                    End If
+                                Loop Until statusChanged = True
+
+                            Else
+                                'Logg("The mail was not sent for senders reference: " & sbk)
+                                Console.WriteLine("ProcessPendingFiles(): Mail Not Sent")
+                            End If
+
+
+                        Else
+                            'Logg("The request id:" & requestId & " does not exist.")
+                            Console.WriteLine("The Telex Copy Has Been Moved To The FundsPro folder.")
+                            Dim stillDeleteFromFundsIn As Boolean = True
+                            MoveProcessedFileToSwiftProcessedFolder(systemTempFolder & filename, outputfolder, processedFolder, stillDeleteFromFundsIn)
+                        End If
+
+
+
+                    Else
+                        Console.WriteLine("Could not read senders reference from the telex copy file name: " & telexCopyFilename)
+                    End If
+
+                End If
+
+                Try
+                    If File.Exists(telexCopyFilename) Then
+                        File.Delete(telexCopyFilename)
+                    End If
+                Catch ex As Exception
+                    Console.WriteLine("Error deleting our copy of the telex file from our infolder" & ex.Message)
+                End Try
+            Next
+
+
+        End If
+
+        Return sbkRefStatusDict
+    End Function
+    'TODO: Prepare for when the request ids will be changed per year.
+    Private Function UpdateAssociatedFtRequests(ByVal sendersReference As String, ByVal requestId As String, ByVal status As String) As Boolean
+        Dim retStatus As Boolean = False
+        Dim cn As SqlConnection = New SqlConnection(Utils.GetSqlConnString())
+        Try
+            cn.Open()
+
+            Const sqlSpUpdateFtRequests As String = "UPDATE transactions set status=@status where transactionid=@transid"
+            Dim cmd As New SqlCommand(sqlSpUpdateFtRequests, cn)
+            cmd.CommandTimeout = 0
+            cmd.CommandType = CommandType.Text
+
+
+            cmd.Parameters.AddWithValue("@status", status)
+            cmd.Parameters.AddWithValue("@transid", sendersReference)
+
+            Dim retval As Integer = cmd.ExecuteNonQuery()
+            If retval > 0 Then
+                retStatus = True
+            Else
+                retStatus = False
+            End If
+
+
+
+        Catch ex As Exception
+            'TODO: Implement robust exception logging
+            'Dim mylog As New Microsoft.VisualBasic.Logging.Log
+            'mylog.WriteException(ex)
+            Logg("There was an error while updating the transacttemp2 and tblSwiftRequest tables' 'status' field in UpdateAssociatedFtRequest(): " & ex.Message)
+
+        Finally
+            cn.Close()
+        End Try
+
+        Return retStatus
+    End Function
+
+    Private Sub CleanUp(ByVal pendingFilenameArray As String())
+        Dim oldFilename As String = String.Empty
+        Dim newFilename As String = String.Empty
+
+        Try
+            If pendingFilenameArray IsNot Nothing Then
+
+                Dim cn As New SqlConnection(GetConnectionStringFromFile())
+                cn.Open()
+
+                Dim cmd As New SqlCommand("spStoreSwiftOutFilename", cn)
+                cmd.CommandTimeout = 0
+                cmd.CommandType = CommandType.StoredProcedure
+
+                '-- Add the parameters for the stored procedure here
+                '@filename ntext,
+                '@status nvarchar(20)")
+                For Each fn As String In pendingFilenameArray
+                    fn = fn.Trim()
+                    If Not String.IsNullOrEmpty(fn) Then
+
+                        fn = Path.GetFileName(fn)
+                        cmd.Parameters.AddWithValue("@filename", fn)
+                        cmd.Parameters.AddWithValue("@status", "COMPLETED")
+                        cmd.ExecuteNonQuery()
+
+                        cmd.Parameters.Clear()
+                        'Attempt to move the file from FundsOut to FundsPro on the SWIFT server
+                        'indicating that you have successfully processed these files.
+                    End If
+
+                Next
+                cn.Close()
+            End If
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub CloseApplication()
+        'Application.Exit()
+    End Sub
+    ''' <summary>
+    ''' Reads the senders reference from the MT103 file and parses out the request id from it
+    ''' using this format SBK/FT/12/{request_id}
+    ''' </summary>
+    ''' <param name="filename">The filename from which you should read.</param>
+    ''' <returns>a string which ideally should not be empty.</returns>
+    ''' <remarks>Returns an empty string if no such frile found.</remarks>
+    Private Function ReadRequestIdFromSendersReferenceInMt103File(ByVal filename As String) As Long
+        Dim ref As String = String.Empty
+        Dim requestID As Long = -1D
+        'TODO: implement reading a mt103 file and parsing out the Field 20 or senders reference.
+        If File.Exists(filename) Then
+            Dim mt103 As New Mt103Message
+            mt103.ReadFromFile(filename)
+            If mt103.Fields.Count > 0 Then
+                Dim foundFields As List(Of Field) = mt103("20")
+                Dim f As Field = Nothing
+                If foundFields IsNot Nothing AndAlso foundFields.Any() Then
+                    f = foundFields(0)
+                    If f IsNot Nothing Then
+                        ref = f.Content.Trim
+                        If Not String.IsNullOrEmpty(ref) Then
+                            Dim parts() As String = ref.Split("/"c)
+                            If parts IsNot Nothing AndAlso parts.Count() = 4 Then
+                                'ref = parts(3)
+                                If IsNumeric(parts(3)) Then
+                                    requestID = CLng(parts(3))
+                                End If
+
+                            End If
+                        End If
+                    End If
+                End If
+            End If
+            'ref = "SBK/FT/12/00069"
+        End If
+
+        Return requestID
+        'Return Long.Parse(ref)
+    End Function
+
+    Private Function GetSwiftOutputFilePath(ByVal outputType As OutputFolderType, ByVal dsSettings As DataSet) As String
+        Dim filepath As String = String.Empty
+
+        Try
+            If dsSettings.Tables.Count > 0 AndAlso dsSettings.Tables(0).Rows.Count > 0 Then
+                Dim dr As DataRow = dsSettings.Tables(0).Rows(0)
+                If dr IsNot Nothing And Not IsDBNull(dr) Then
+                    Select Case outputType
+                        Case OutputFolderType.Expanded
+                            filepath = CStr(dr("swiftOutputFolder"))
+                        Case OutputFolderType.Normal
+                            filepath = CStr(dr("swiftOutputFolderText"))
+                        Case OutputFolderType.Processed
+                            filepath = CStr(dr("swiftProcessed"))
+
+                    End Select
+
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
+
+        Return filepath
+    End Function
+
+    Private Sub Logg(ByVal msg As String)
+
+        'Dim cn As New SqlConnection("Data Source=10.0.0.230; Initial Catalog=TradeServicesTest; User Id=sa; Password=($terl1ng)")
+        'Dim cmd As New SqlCommand("spLogScheduledTaskRun")
+        Try
+            If Not LOG_DIR.EndsWith(Path.DirectorySeparatorChar) Then
+                File.AppendAllText(LOG_DIR & Path.DirectorySeparatorChar & GetLogFileName(), msg & vbCrLf)
+            Else
+                File.AppendAllText(LOG_DIR & GetLogFileName(), msg & vbCrLf)
+            End If
+
+            'cn.Open()
+            'cmd.Connection = cn
+            'cmd.CommandTimeout = 0
+            'cmd.CommandType = CommandType.StoredProcedure
+            'cmd.Parameters.AddWithValue("@message", msg)
+
+            'cmd.ExecuteNonQuery()
+        Catch ex As Exception
+
+            'TODO: Implement writing to the windows event log.
+        Finally
+            'cn.Close()
+        End Try
+
+    End Sub
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="filePath">The path where to save the file</param>
+    ''' <param name="fileName">The name fo the file to be created.</param>
+    ''' <param name="IP">Theh ip of the FTP server</param>
+    ''' <param name="UserID">user id</param>
+    ''' <param name="Password">password</param>
+    ''' <param name="ftpFolder">The folder on the FTP server from which to download the file.</param>
+    ''' <remarks></remarks>
+    Private Sub Download(ByVal filePath As String, ByVal fileName As String, ByVal IP As String, ByVal UserID As String, ByVal Password As String, Optional ByVal ftpFolder As String = "")
+        'IP = "198.162.1.8"
+        'UserID = "domft"
+        'Password = "($terl1ng)"
+        Dim reqFTP As FtpWebRequest = Nothing
+        Dim ftpStream As Stream = Nothing
+        Try
+            Dim outputStream As FileStream
+
+            If filePath.EndsWith(Path.DirectorySeparatorChar) Then
+                outputStream = New FileStream(filePath + fileName, FileMode.Create)
+            Else
+                outputStream = New FileStream(filePath + "/" + fileName, FileMode.Create)
+            End If
+
+            Using outputStream
+                Dim ftpLink As String = String.Empty
+
+                If Not String.IsNullOrEmpty(ftpFolder) Then
+                    ftpLink = "ftp://" + IP + "/" + ftpFolder + "/" + fileName
+                Else
+                    ftpLink = "ftp://" + IP + "/" + fileName
+                End If
+
+                reqFTP = DirectCast(FtpWebRequest.Create(New Uri(ftpLink)), FtpWebRequest)
+
+                reqFTP.Method = WebRequestMethods.Ftp.DownloadFile
+                reqFTP.UseBinary = True
+                reqFTP.Proxy = Nothing
+                reqFTP.Credentials = New NetworkCredential(UserID, Password)
+                ' Dim response As FtpWebResponse '= DirectCast(reqFTP.GetResponse(), FtpWebResponse)
+                Using response As FtpWebResponse = DirectCast(reqFTP.GetResponse(), FtpWebResponse)
+                    ftpStream = response.GetResponseStream()
+                    Using ftpStream
+                        Dim cl As Long = response.ContentLength
+                        Dim bufferSize As Integer = 2048
+                        Dim readCount As Integer
+                        Dim buffer As Byte() = New Byte(bufferSize - 1) {}
+
+                        readCount = ftpStream.Read(buffer, 0, bufferSize)
+                        While readCount > 0
+                            outputStream.Write(buffer, 0, readCount)
+                            readCount = ftpStream.Read(buffer, 0, bufferSize)
+                        End While
+
+                    End Using
+                End Using
+
+
+            End Using
+
+        Catch ex As Exception
+            'Throw New Exception(ex.Message.ToString())
+            Logg("Exception in method Download while downloading file from swift server. Filename: " & fileName & vbCrLf & "Message:" & ex.Message)
+        Finally
+
+            If ftpStream IsNot Nothing Then
+                ftpStream.Close()
+                ftpStream.Dispose()
+            End If
+        End Try
+    End Sub
+    ''' <summary>
+    ''' Moves a specified file (using only the filename portion from the source folder to the 
+    ''' destination folder.
+    ''' </summary>
+    ''' <param name="processedFilename"></param>
+    ''' <param name="sourceFolderName"></param>
+    ''' <param name="destinationFolderName"></param>
+    ''' <remarks></remarks>
+    Private Function MoveProcessedFileToSwiftProcessedFolder(ByVal processedFilename As String, ByVal sourceFolderName As String, ByVal destinationFolderName As String, Optional ByVal isStillDeleteFromFundsIn As Boolean = False) As Boolean
+        Dim status As Boolean = False
+        Dim statCode As FtpStatusCode
+        Try
+
+            'status = FtpUploadFile(AppSettings.SwiftServerUrl, processedFilename, destinationFolderName)
+            status = FtpUploadFile2(Utils.GetFTPHost, processedFilename, destinationFolderName)
+            'Dim val As String = FtpUploadFileSWIFT("192.168.1.8", processedFilename, destinationFolderName, "domft", "($terl1ng)")
+
+
+            If status = True Then
+                'Second upload the copy on the system temporary folder to the FundsPro folder.
+                statCode = FtpDeleteFile2(Utils.GetFTPHost, processedFilename, sourceFolderName)
+
+                Select Case statCode
+                    Case FtpStatusCode.FileActionOK
+                        status = True
+                    Case FtpStatusCode.CommandOK
+                        status = True
+                    Case FtpStatusCode.ActionNotTakenFileUnavailable
+                        status = True
+                    Case FtpStatusCode.FileActionAborted
+                        status = False
+                    Case FtpStatusCode.ActionNotTakenFilenameNotAllowed
+                        status = True
+                End Select
+
+                'status = status And FtpUploadFile(AppSettings.SwiftServerUrl, processedFilename, destinationFolderName)
+            Else
+                If isStillDeleteFromFundsIn Then
+                    statCode = FtpDeleteFile2(Utils.GetFTPHost, processedFilename, sourceFolderName)
+
+                    Select Case statCode
+                        Case FtpStatusCode.FileActionOK
+                            status = True
+                        Case FtpStatusCode.CommandOK
+                            status = True
+                        Case FtpStatusCode.ActionNotTakenFileUnavailable
+                            status = True
+                        Case FtpStatusCode.FileActionAborted
+                            status = False
+                        Case FtpStatusCode.ActionNotTakenFilenameNotAllowed
+                            status = True
+                    End Select
+                End If
+            End If
+
+
+
+            'status = status And FtpUploadFile(AppSettings.SwiftServerUrl, processedFilename, destinationFolderName)
+
+
+
+
+        Catch ex As Exception
+
+            Dim innerMsg As String = ""
+            If ex.InnerException IsNot Nothing Then
+                innerMsg = ex.InnerException.Message
+            End If
+            Logg(ex.Message & innerMsg)
+            status = False
+        Finally
+
+        End Try
+
+        Return status
+    End Function
+
+    Private Function IsRequestIdValid(ByVal requestId As Long) As Boolean
+        Dim valid As Boolean = False
+        Dim sql As String = "select count(*) from TransactTemp2_LOG WHERE year(EntryDate)=" & Date.Now.Year & " and SN=" & requestId
+        Dim cn As New SqlConnection(GetConnectionStringFromFile())
+        Try
+            cn.Open()
+            Dim cmd As New SqlCommand(sql, cn)
+            If CInt(cmd.ExecuteScalar()) > 0 Then
+                valid = True
+            Else
+                valid = False
+            End If
+        Catch ex As Exception
+            Logg("IsRequestIdValid(): There was an exception while trying to confirm the existence of the request id: " & requestId)
+        Finally
+            If cn IsNot Nothing Then cn.Close()
+        End Try
+
+        Return valid
+    End Function
+    Private Function IsSendersReferenceValid(ByVal sendersReference As String) As Boolean
+        Dim valid As Boolean = False
+
+        Dim sql As String = "select count(*) from transactions WHERE transactionid='" & sendersReference & "' and Status='SwiftInProcess'"
+        Dim cn As New SqlConnection(GetConnectionStringFromFile())
+
+
+        Try
+            cn.Open()
+            Dim cmd As New SqlCommand(sql, cn)
+            If CInt(cmd.ExecuteScalar()) > 0 Then
+                valid = True
+            Else
+                valid = False
+            End If
+        Catch ex As Exception
+            Logg("IsSendersReferenceValid(): There was an exception while trying to confirm the existence of the request id: ")
+        Finally
+            If cn IsNot Nothing Then cn.Close()
+        End Try
+
+        Return valid
+    End Function
+    Public Function FtpUploadFileSWIFT(ByVal ftpHost As String, ByVal filenameToUpload As String, ByVal uploadFolderName As String, ByVal usr As String, ByVal pwd As String) As String
+        'Dim fi As FileInfo
+        Dim status As Boolean = False
+        Dim fne As String
+        fne = "ftp://" & ftpHost & "/" & uploadFolderName & "/" & Path.GetFileName(filenameToUpload)
+
+        Dim statusString As String = String.Empty
+        '' Get the object used to communicate with the server.
+        Dim request As FtpWebRequest = DirectCast(WebRequest.Create(fne), FtpWebRequest)
+        request.Method = WebRequestMethods.Ftp.UploadFile
+
+        'Dim wp As WebProxy
+        'wp = New WebProxy("10.0.0.120", 80)
+        request.Proxy = Nothing 'wp
+        request.Credentials = New NetworkCredential(usr, pwd) ' New NetworkCredential("domft", "($terl1ng)")
+        request.KeepAlive = True
+
+
+        '' Copy the contents of the file to the request stream.
+        Dim sourceStream As New StreamReader(filenameToUpload)
+        Dim fileContents As Byte() = Encoding.UTF8.GetBytes(sourceStream.ReadToEnd())
+        sourceStream.Close()
+        request.ContentLength = fileContents.Length
+
+        Dim requestStream As Stream = request.GetRequestStream()
+        requestStream.Write(fileContents, 0, fileContents.Length)
+        requestStream.Close()
+
+        Dim response As FtpWebResponse = DirectCast(request.GetResponse(), FtpWebResponse)
+
+        statusString = String.Format("Upload File Complete, status {0}", response.StatusDescription)
+
+        response.Close()
+
+        Return statusString
+    End Function
+
+    ''' <summary>
+    ''' Uploads a file for upload to the SWIFT Server via FTP.
+    ''' </summary>
+    ''' <param name="ftpHost">The IP address of the FTP host.</param>
+    ''' <param name="filenameToUpload">the filename of the file to be uploaded either full filepath or just the file name only.</param>
+    ''' <param name="uploadFolderName">The folder to which you want to upload.</param>
+    ''' <returns>a sttring that identifies whether the upload succeeded.</returns>
+    ''' <remarks></remarks>
+    Public Function FtpUploadFile(ByVal ftpHost As String, ByVal filenameToUpload As String, Optional ByVal uploadFolderName As String = "FundsIn") As Boolean
+        'Dim fi As FileInfo
+        Dim status As Boolean = False
+        Dim fne As String
+        fne = "ftp://" & ftpHost & "/" & uploadFolderName & "/" & Path.GetFileName(filenameToUpload)
+
+        Dim statusString As String = String.Empty
+        '' Get the object used to communicate with the server.
+        Dim request As FtpWebRequest = DirectCast(WebRequest.Create(fne), FtpWebRequest)
+        Dim sourceStream As StreamReader = Nothing
+        Dim requestStream As Stream = Nothing
+        Dim response As FtpWebResponse = Nothing
+        Try
+            request.Method = WebRequestMethods.Ftp.UploadFile
+
+            'Dim wp As WebProxy
+            'wp = New WebProxy("10.0.0.120", 80)
+            request.Proxy = Nothing 'wp
+            request.Credentials = New NetworkCredential(Utils.Username, Utils.Password)
+            request.KeepAlive = True
+
+
+            '' Copy the contents of the file to the request stream.
+            sourceStream = New StreamReader(filenameToUpload)
+            Dim fileContents As Byte() = Encoding.UTF8.GetBytes(sourceStream.ReadToEnd())
+            sourceStream.Close()
+            request.ContentLength = fileContents.Length
+
+            requestStream = request.GetRequestStream()
+            requestStream.Write(fileContents, 0, fileContents.Length)
+
+
+            response = DirectCast(request.GetResponse(), FtpWebResponse)
+
+            statusString = String.Format("Upload File Complete, status {0}", response.StatusDescription)
+
+            If response.StatusCode = FtpStatusCode.ClosingData OrElse response.StatusDescription.Contains("226") OrElse response.StatusCode = FtpStatusCode.FileActionOK Then
+                status = True
+            Else
+                status = False
+            End If
+
+
+        Catch ex As Exception
+            Logg("An error occurred while uploading a file to the FTP server." & vbCrLf & ex.Message)
+            status = False
+        Finally
+            If response IsNot Nothing Then response.Close()
+            If requestStream IsNot Nothing Then requestStream.Close()
+            If sourceStream IsNot Nothing Then sourceStream.Close()
+
+        End Try
+
+
+        Return status
+    End Function
+
+    ''' <summary>
+    ''' Uploads a file for upload to the SWIFT Server via FTP.
+    ''' </summary>
+    ''' <param name="ftpHost">The IP address of the FTP host.</param>
+    ''' <param name="filenameToUpload">the filename of the file to be uploaded either full filepath or just the file name only.</param>
+    ''' <param name="uploadFolderName">The folder to which you want to upload.</param>
+    ''' <returns>a sttring that identifies whether the upload succeeded.</returns>
+    ''' <remarks></remarks>
+    Public Function FtpUploadFile2(ByVal ftpHost As String, ByVal filenameToUpload As String, Optional ByVal uploadFolderName As String = "FundsIn") As Boolean
+        'Dim fi As FileInfo
+        Dim status As Boolean = False
+        Dim fne As String
+        fne = "ftp://" & ftpHost & "/" & uploadFolderName & "/" & Path.GetFileName(filenameToUpload)
+
+        Dim statusString As String = String.Empty
+        '' Get the object used to communicate with the server.
+        Dim request As FtpWebRequest = DirectCast(WebRequest.Create(fne), FtpWebRequest)
+        Dim sourceStream As StreamReader = Nothing
+        Dim requestStream As Stream = Nothing
+        Dim response As FtpWebResponse = Nothing
+        Try
+            request.Method = WebRequestMethods.Ftp.UploadFile
+
+            'Dim wp As WebProxy
+            'wp = New WebProxy("10.0.0.120", 80)
+            request.Proxy = Nothing 'wp
+            request.Credentials = New NetworkCredential(Utils.Username, Utils.Password)
+            request.KeepAlive = True
+
+
+            '' Copy the contents of the file to the request stream.
+            sourceStream = New StreamReader(filenameToUpload)
+            Dim fileContents As Byte() = Encoding.UTF8.GetBytes(sourceStream.ReadToEnd())
+            sourceStream.Close()
+            request.ContentLength = fileContents.Length
+
+            requestStream = request.GetRequestStream()
+            Using requestStream
+                requestStream.Write(fileContents, 0, fileContents.Length)
+                requestStream.Close()
+            End Using
+
+
+            response = DirectCast(request.GetResponse(), FtpWebResponse)
+
+            statusString = String.Format("Upload File Complete, status {0}", response.StatusDescription)
+
+            If response.StatusCode = FtpStatusCode.ClosingData OrElse response.StatusDescription.Contains("226") OrElse response.StatusCode = FtpStatusCode.FileActionOK Then
+                status = True
+            Else
+                status = False
+            End If
+
+
+        Catch ex As Exception
+            Logg("An error occurred while uploading a file to the FTP server." & vbCrLf & ex.Message)
+            status = False
+        Finally
+            If response IsNot Nothing Then response.Close()
+            If requestStream IsNot Nothing Then requestStream.Close()
+            If sourceStream IsNot Nothing Then sourceStream.Close()
+
+        End Try
+
+
+        Return status
+    End Function
+    ''' <summary>
+    ''' Send mail to the CSO, HOP attaching the the files whose names are in the array
+    ''' fnameArr.
+    ''' 
+    ''' </summary>
+    ''' <param name="fnameArr">a string array containing the full filenames of the files to be sent as attachments</param>
+    ''' <param name="customerMailAddress">The email addresses to send the mail to CSO and HOP and customer if available</param>
+    ''' <param name="customerName">The name of the customer for inclusion in the mail.</param>
+    ''' <param name="trxnAmount">The transaction amount.</param>
+    ''' <param name="transferCurrency">The currency of the amount to be transferred.</param>
+    ''' <returns>TRUE if successfully sent and FALSE otherwise</returns>
+    ''' <remarks>The customername, trxnamount and transfercurrency are optional fields.</remarks>
+    Private Function SendFilesToTheirCustomersAsAttachment(ByVal fnameArr As String(), ByVal customerMailAddress As String, Optional ByVal customerName As String = "", Optional ByVal trxnAmount As String = "", Optional ByVal transferCurrency As String = "", Optional ByVal requestID As Long = -1) As Boolean
+        Dim status As Boolean = True
+        If fnameArr IsNot Nothing AndAlso fnameArr.Length > 0 Then
+            For Each filename As String In fnameArr
+
+
+                Dim smtp As New SmtpClient
+
+
+                smtp.Host = "10.0.0.88"
+
+
+
+                Dim msg As New MailMessage
+
+                Dim disposition As ContentDisposition = Nothing
+
+
+                If Not String.IsNullOrEmpty(customerMailAddress) Then
+                    customerMailAddress = customerMailAddress
+                End If
+
+
+                Try
+                    'Dim deliveryMethod As String = "IIS"
+                    'If deliveryMethod = "IIS" Then
+                    '    'smtp.DeliveryMethod = SmtpDeliveryMethod.PickupDirectoryFromIis
+                    '    smtp.DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory
+                    'Else
+
+                    'End If
+                    msg.From = New MailAddress("TradeServices@Sterlingbankng.com")
+                    Dim mailArr() As String = Nothing
+                    If customerMailAddress.Contains(",") Then
+                        mailArr = customerMailAddress.Split(","c)
+                    End If
+                    If mailArr IsNot Nothing AndAlso mailArr.Length > 0 Then
+                        For Each mailadd As String In mailArr
+                            mailadd = mailadd.Trim()
+                            If Not String.IsNullOrEmpty(mailadd) Then
+                                If isEmailAddressValid(mailadd) Then
+                                    msg.To.Add(New MailAddress(mailadd))
+                                End If
+                            End If
+                        Next
+                    Else
+                        customerMailAddress = customerMailAddress.Trim
+                        If isEmailAddressValid(customerMailAddress) Then
+                            msg.To.Add(New MailAddress(customerMailAddress))
+                        End If
+                    End If
+
+                    Using attmt As Attachment = New Attachment(filename, MediaTypeNames.Text.Plain)
+
+                        disposition = attmt.ContentDisposition
+                        disposition.CreationDate = File.GetCreationTime(filename)
+                        disposition.ModificationDate = File.GetLastWriteTime(filename)
+                        disposition.ReadDate = File.GetLastAccessTime(filename)
+
+                        msg.Attachments.Add(attmt)
+                        Dim tmpBody As String = String.Empty
+                        Dim body As String = String.Empty
+                        If requestID <> -1 Then
+                            Dim requestDs As DataSet = GetRequestDetails(requestID)
+                            tmpBody = GetTemplateFileContent()
+                            Using requestDs
+                                If requestDs IsNot Nothing AndAlso requestDs.Tables.Count > 0 AndAlso requestDs.Tables(0).Rows.Count > 0 AndAlso Not String.IsNullOrEmpty(tmpBody) Then
+                                    Dim reqDate As Date = Convert.ToDateTime(requestDs.Tables(0).Rows(0)("[date]")).ToString("dd-MMM-yyyy")
+                                    Dim benAccount = Convert.ToString(requestDs.Tables(0).Rows(0)("Beneficiary"))
+                                    Dim paymentPurpose As String = Convert.ToString(requestDs.Tables(0).Rows(0)("Remarks"))
+
+
+
+                                    Dim sendername As String = Convert.ToString(requestDs.Tables(0).Rows(0)("Customer_name"))
+                                    Dim beneficiaryName As String = Convert.ToString(requestDs.Tables(0).Rows(0)("Beneficiary"))
+                                    tmpBody = tmpBody.Replace("%%dtm%%", DateTime.Now.ToString("dd-MMM-yyyy"))
+                                    tmpBody = tmpBody.Replace("%%amount%%", trxnAmount)
+                                    Dim ctx As New sbp.curToWords(CDec(trxnAmount), transferCurrency, "")
+                                    tmpBody = tmpBody.Replace("%%amountwords%%", ctx.outText)
+                                    tmpBody = tmpBody.Replace("%%benename%%", beneficiaryName)
+                                    tmpBody = tmpBody.Replace("%%paymentpurpose%%", paymentPurpose)
+                                  
+
+
+                                    tmpBody = tmpBody.Replace("%%sendername%%", sendername)
+                                    tmpBody = tmpBody.Replace("%%beneaccount%%", benAccount)
+
+                                End If
+                            End Using
+
+                        End If
+
+                        If Not String.IsNullOrEmpty(tmpBody) Then
+                            body = tmpBody
+                        Else
+                            If Not String.IsNullOrEmpty(customerName) And Not String.IsNullOrEmpty(trxnAmount) And Not String.IsNullOrEmpty(transferCurrency) Then
+                                body = "Good day." & vbCrLf & vbCrLf & "Please find attached the telex copy of the transaction performed by the customer." & vbCrLf & "NAME: " & customerName & vbCrLf & "TRANSACTION AMOUNT: " & trxnAmount & vbCrLf & "CURRENCY: " & transferCurrency
+                            Else
+                                body = "Good day." & vbCrLf & vbCrLf & "Please find attached the telex copy of the transaction performed by the customer." ' & vbCrLf & " NAME: " & customerName & vbCrLf & " TRANSACTION AMOUNT: " & trxnAmount & vbCrLf & "CURRENCY: " & transferCurrency
+                            End If
+                            body = body & vbCrLf & vbCrLf & vbCrLf & vbCrLf & "Best regards," & vbCrLf & vbCrLf & "Sterling Novel Trade FT Platform" & vbCrLf & "Please do not reply this mail."
+                        End If
+
+                        msg.IsBodyHtml = True
+                        msg.Body = body
+                        msg.BodyEncoding = System.Text.Encoding.UTF8
+                        msg.Subject = "Domiciliary Funds Transfer Telex Copy"
+
+                        Dim errormsg As String = String.Empty
+                        Try
+                            smtp.Send(msg)
+                            status = status And True
+                        Catch allRecipientEx As SmtpFailedRecipientsException
+                            errormsg = "All recipients failed to receive: >>" & allRecipientEx.Message & vbCrLf
+                            If Not String.IsNullOrEmpty(allRecipientEx.FailedRecipient) Then
+                                errormsg = errormsg & "Failed Recipient:=> " & allRecipientEx.FailedRecipient & vbCrLf
+                            End If
+
+                            If allRecipientEx.InnerException IsNot Nothing Then
+                                errormsg = errormsg & "Inner Ex Msg:=> " & allRecipientEx.InnerException.Message & vbCrLf
+                            End If
+                            Logg(errormsg)
+                            If msg.To.Count > allRecipientEx.InnerExceptions.Length Then
+                                status = status And True
+                            Else
+                                status = status And False
+                            End If
+
+                        Catch particularRecipientEx As SmtpFailedRecipientException
+                            errormsg = "All recipients failed to receive: >>" & particularRecipientEx.Message & vbCrLf
+                            If Not String.IsNullOrEmpty(particularRecipientEx.FailedRecipient) Then
+                                errormsg = errormsg & "Failed Recipient:=> " & particularRecipientEx.FailedRecipient & vbCrLf
+                            End If
+
+                            If particularRecipientEx.InnerException IsNot Nothing Then
+                                errormsg = errormsg & "Inner Ex Msg:=> " & particularRecipientEx.InnerException.Message & vbCrLf
+                            End If
+                            Logg(errormsg)
+
+                            status = status And True
+                        Catch ex As Exception
+                            Logg(ex.Message)
+                            status = status And False
+                        Finally
+
+                        End Try
+
+                    End Using
+                    DeleteFile(filename)
+
+
+
+                    'status = status And True
+                Catch ex As Exception
+                    Console.WriteLine(ex.Message)
+                    If ex.InnerException IsNot Nothing Then
+                        Console.WriteLine("Inner exception" & ex.InnerException.Message)
+                    End If
+                    status = status And False
+                Finally
+
+                End Try
+
+            Next
+        End If
+        Return status
+    End Function
+    ''' <summary>
+    ''' Returns the email addresses associated with this request.
+    ''' It retrieves the customer email (if stored), the email of the CSO and the email of the HOP of the branch who initiated
+    ''' the funds transfer request.
+    ''' </summary>
+    ''' <param name="requestId">the request id</param>
+    ''' <returns>the emails associated with the request id or empty string</returns>
+    ''' <remarks>Please check for the empty string</remarks>
+    Private Function GetRequestEmail(ByVal requestId As Long, ByVal sbkRef As String) As String
+        Dim email As String = String.Empty
+        Dim sql As String = String.Empty
+        Dim customerEmail As String = ""
+        Dim csoEmail As String = ""
+        Dim hopEmail As String = ""
+        Dim dtr As SqlDataReader = Nothing
+        Dim dtr2 As SqlDataReader = Nothing
+        Dim cn As New SqlConnection(Utils.GetSqlConnString())
+        Try
+            Dim ds As New DataSet
+            '            sql = "SELECT * FROM tblSwiftRequest WHERE reqID=" & requestId
+            sql = "SELECT * FROM transactions WHERE TransactionID='" & sbkRef & "' AND status='SwiftInprocess'"
+            'substring(convert(nvarchar,year(EntryDate)), 3, 2)=" & refPartsArr(2)
+
+            cn.Open()
+            Dim cmd As New SqlCommand(sql, cn)
+            Dim cmdAdapter As New SqlDataAdapter(cmd)
+            cmdAdapter.Fill(ds)
+            If ds.Tables.Count > 0 And ds.Tables(0).Rows.Count > 0 Then
+                If Not IsDBNull(ds.Tables(0).Rows(0)("Customer_email")) AndAlso Not String.IsNullOrEmpty(CStr(ds.Tables(0).Rows(0)("email"))) Then
+                    customerEmail = ds.Tables(0).Rows(0)("Customer_email").ToString.Trim()
+                End If
+
+                Dim hopUserId As String = "" 'ds.Tables(0).Rows(0)("hopUserId").ToString.Trim
+                Dim csoUserId As String = "" 'ds.Tables(0).Rows(0)("csoUserID").ToString.Trim
+                Dim braCode As String = "" 'ds.Tables(0).Rows(0)("csoBraCode").ToString.Trim
+
+                'Use the workflow to get the emails fo the CSO, and HOP.
+                Dim role As String = "CSO"
+                Dim propertyToSearchBy As String = "BraCode"
+
+
+                'If Not String.IsNullOrEmpty(braCode) Then
+                '    dtr = WorkFlow.DAL.GetPropertiesValByRole("SWIFTPro", "email", role, propertyToSearchBy, braCode) 'csoUserId)
+                'Else
+                '    dtr = WorkFlow.DAL.GetPropertiesValByRole("SWIFTPro", "email", role, propertyToSearchBy, csoUserId)
+                'End If
+
+                'Using dtr
+                '    If dtr.HasRows Then
+                '        While dtr.Read()
+                '            csoEmail = csoEmail & dtr.GetValue(0).ToString().Trim() & ","
+                '        End While
+                '    Else
+                '        csoEmail = WorkFlow.DAL.GetPropertiesVal("SWIFTPro", "Email", csoUserId)
+                '    End If
+                'End Using
+
+
+
+
+                'role = "HOP"
+
+                'If Not String.IsNullOrEmpty(braCode) Then
+                '    dtr2 = WorkFlow.DAL.GetPropertiesValByRole("SWIFTPro", "email", role, propertyToSearchBy, braCode) 'hopUserId)
+                'Else
+                '    dtr2 = WorkFlow.DAL.GetPropertiesValByRole("SWIFTPro", "email", role, propertyToSearchBy, hopUserId)
+                'End If
+
+                'Using dtr2
+                '    If dtr2.HasRows Then
+
+                '        While dtr2.Read()
+                '            hopEmail = hopEmail & dtr2.GetValue(0).ToString().Trim() & ","
+                '        End While
+                '    Else
+                '        hopEmail = WorkFlow.DAL.GetPropertiesVal("SWIFTPro", "Email", hopUserId)
+
+                '    End If
+                'End Using
+
+
+
+                email = customerEmail.Trim(New Char() {","c}) & "," & hopEmail.Trim(New Char() {","c}) & "," & csoEmail.Trim(New Char() {","c})
+
+                email = email.Trim(New Char() {","c})
+
+
+            End If
+        Catch ex As Exception
+            'Logg("Exception while retrieving the email address attached to the request")
+        Finally
+
+            If dtr2 IsNot Nothing Then
+                dtr2.Close()
+            End If
+
+            If dtr IsNot Nothing Then
+                dtr.Close()
+            End If
+
+            If cn IsNot Nothing Then
+                cn.Close()
+            End If
+
+
+        End Try
+        Return email
+    End Function
+    ''' <summary>
+    ''' Reads the senders reference from the telex copy.
+    ''' </summary>
+    ''' <param name="fullFilename">The full file path and file name of the telex (expanded) copy from which to read the senders reference</param>
+    ''' <returns>a string containing the senders reference or empty string if it could not find the senders reference.</returns>
+    ''' <remarks>Please check for empty string or NOTHING that will be returned.</remarks>
+    Private Function ReadSendersReferenceFromTelexCopy(ByVal fullFilename As String) As String
+        Dim sendersRef As String = String.Empty
+        If File.Exists(fullFilename) Then
+            Dim lines() As String = File.ReadAllLines(fullFilename)
+            Dim found As Boolean = False
+            If lines IsNot Nothing Then
+                If lines.Length > 0 Then
+
+                    For Each line In lines
+                        line = line.Replace(" ", "").ToLower()
+                        If line.Contains("20:sender") Then
+                            found = True
+                            Continue For ' Our target should be on the next line.
+                        End If
+
+                        If found Then
+                            sendersRef = line.Trim()
+                            Exit For
+                        End If
+                    Next
+
+                Else
+                    sendersRef = String.Empty
+                End If
+            End If
+        End If
+        Return sendersRef
+    End Function
+
+    Private Function GetCustomerName(ByVal sbk As String) As String
+        Dim custname As String = String.Empty
+        Dim cn As SqlConnection = New SqlConnection(Utils.GetSqlConnString())
+        Dim cmd As SqlCommand = Nothing
+        If Not String.IsNullOrEmpty(sbk) Then
+            Try
+                cn.Open()
+                cmd = New SqlCommand("SELECT Customer_name from transactions where transactionid=@transactionid", cn)
+                cmd.CommandType = CommandType.Text
+                cmd.Parameters.AddWithValue("@transactionid", sbk)
+                Dim dr As SqlDataReader = cmd.ExecuteReader()
+                If dr IsNot Nothing Then
+                    While dr.Read
+                        If Not IsDBNull(dr("Customer_name")) Then
+                            custname = CStr(dr("Customer_name").ToString() + "")
+                        End If
+                    End While
+                End If
+            Catch ex As Exception
+                Logg("GetCustomerName(): " & ex.Message)
+            Finally
+                If cn IsNot Nothing Then cn.Close()
+            End Try
+        End If
+
+        Return custname
+    End Function
+
+    Private Function GetTransferAmt(ByVal sbk As String) As Decimal
+        Dim amt As Decimal = 0D
+        Dim cn As SqlConnection = New SqlConnection(Utils.GetSqlConnString())
+        Dim cmd As SqlCommand = Nothing
+        If Not String.IsNullOrEmpty(sbk) Then
+            Try
+                cn.Open()
+                cmd = New SqlCommand("SELECT amount FROM transactions where transactionid=@transactionid", cn)
+                cmd.CommandType = CommandType.Text
+                cmd.Parameters.AddWithValue("@transactionid", sbk)
+                Dim dr As SqlDataReader = cmd.ExecuteReader()
+                If dr IsNot Nothing Then
+                    While dr.Read
+                        If Not IsDBNull(dr("amount")) Then
+                            amt = CDec(dr("amount").ToString() + "")
+                        End If
+                    End While
+                End If
+            Catch ex As Exception
+                Logg("GetTransferAmt(): " & ex.Message)
+            Finally
+                If cn IsNot Nothing Then cn.Close()
+            End Try
+        End If
+        Return amt
+    End Function
+
+    Private Function GetTransferCurrency(ByVal sbk As String) As String
+        Dim currency As String = String.Empty
+        currency = "NGN"
+        'Dim cn As SqlConnection = New SqlConnection(GetConnectionStringFromFile())
+        'Dim cmd As SqlCommand = Nothing
+        'If Not String.IsNullOrEmpty(sbk) Then
+        '    Try
+        '        cn.Open()
+        '        cmd = New SqlCommand("spGetSwiftRequestDetailsBySendersRef", cn)
+        '        cmd.CommandType = CommandType.StoredProcedure
+        '        cmd.Parameters.Add("@sendersReference", SqlDbType.NVarChar, 300).Value = sbk
+        '        Dim dr As SqlDataReader = cmd.ExecuteReader()
+        '        If dr IsNot Nothing Then
+        '            While dr.Read
+        '                If Not IsDBNull(dr("trxnCurrencyCode")) Then
+        '                    currency = CStr(dr("trxnCurrencyCode").ToString() + "")
+        '                End If
+        '            End While
+        '        End If
+        '    Catch ex As Exception
+        '        Logg("GetTransferCurrency(): " & ex.Message)
+        '    Finally
+        '        If cn IsNot Nothing Then cn.Close()
+        '    End Try
+        'End If
+        Return currency
+    End Function
+
+    Private Function GetTransferCreationDate(ByVal sbk As String) As String
+        Dim datestr As String = String.Empty
+        Dim cn As SqlConnection = New SqlConnection(GetConnectionStringFromFile())
+        Dim cmd As SqlCommand = Nothing
+        If Not String.IsNullOrEmpty(sbk) Then
+            Try
+                cn.Open()
+                cmd = New SqlCommand("select [date] from transactions where transactionid=@transid", cn)
+                cmd.CommandType = CommandType.Text
+                cmd.Parameters.AddWithValue("@transid", sbk)
+                Dim dr As SqlDataReader = cmd.ExecuteReader()
+                If dr IsNot Nothing Then
+                    While dr.Read
+                        If Not IsDBNull(dr("[date]")) Then
+                            datestr = CDate(dr("[date]").ToString() + "")
+                        End If
+                    End While
+                End If
+            Catch ex As Exception
+                Logg("GetTransferCreationDate(): " & ex.Message)
+            Finally
+                If cn IsNot Nothing Then cn.Close()
+            End Try
+        End If
+        Return datestr
+    End Function
+
+    Private Sub ConvertFileToPdf(ByVal sourceFilename As String, ByVal destFilename As String)
+        Dim rdr As StreamReader = Nothing
+
+        '//Read the Data from Input File
+
+        rdr = New StreamReader(sourceFilename)
+        Try
+            Using rdr
+                Try
+                    '//Create a New instance on Document Class
+
+                    Dim doc As iTextSharp.text.Document = New iTextSharp.text.Document()
+
+                    '//Create a New instance of PDFWriter Class for Output File
+                    '            Dim fn As String = Path.GetFileNameWithoutExtension(sourceFilename)
+
+                    PdfWriter.GetInstance(doc, New FileStream(destFilename, FileMode.Create))
+
+                    ''//Open the Document
+
+                    doc.Open()
+
+                    '//Add the content of Text File to PDF File
+
+                    doc.Add(New iTextSharp.text.Paragraph(rdr.ReadToEnd()))
+
+                    '//Close the Document
+
+                    doc.Close()
+
+
+                    '//Open the Converted PDF File
+
+                    'System.Diagnostics.Process.Start(destFilename)
+                Catch ex As Exception
+
+                Finally
+                    If rdr IsNot Nothing Then
+                        rdr.Close()
+                    End If
+                End Try
+            End Using
+        Catch ex As Exception
+            Logg("" & ex.Message)
+        End Try
+
+
+
+
+        'destFilename = Path.GetPathRoot(telexCopyFilename) & destFilename & ".pdf"
+        'ConvertFileToPdf(telexCopyFilename, destFilename)
+    End Sub
+
+    Private Function UpdateTelexCopyColumn(ByVal sbk As String, ByVal telexCopyFilename As String) As Boolean
+        Dim status As Boolean = False
+        Try
+            If File.Exists(telexCopyFilename) Then
+                Dim telex_text As String = File.ReadAllText(telexCopyFilename)
+                If Not String.IsNullOrEmpty(telex_text) Then
+
+                    Dim cn As New SqlConnection(GetConnectionStringFromFile())
+                    Try
+                        cn.Open()
+                        Dim cmd As New SqlCommand("spUpdateTelexCopy", cn)
+                        cmd.CommandType = CommandType.StoredProcedure
+                        cmd.Parameters.AddWithValue("@sendersRef", sbk)
+                        cmd.Parameters.AddWithValue("@telexCopy", telex_text)
+                        Dim retval As Integer = cmd.ExecuteNonQuery()
+                        If retval >= 0 Then
+                            status = True
+                        Else
+                            status = False
+                        End If
+
+                    Catch ex As Exception
+                        status = False
+                    Finally
+                        If cn IsNot Nothing Then
+                            cn.Close()
+                        End If
+                    End Try
+
+                End If
+            Else
+                status = False
+            End If
+        Catch ex As Exception
+            status = False
+        End Try
+
+        Return status
+    End Function
+
+    Private Sub DeleteFile(ByVal filename As String)
+        Try
+            If File.Exists(filename) Then
+                File.Delete(filename)
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Private Function GetPdfDirectory() As String
+        Dim curDir As String = Directory.GetCurrentDirectory()
+        Dim pdfDirectory As String = curDir & Path.DirectorySeparatorChar & "OutPDF"
+        Try
+            If Not Directory.Exists(pdfDirectory) Then
+                Directory.CreateDirectory(pdfDirectory)
+            End If
+
+
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+        End Try
+
+        Return pdfDirectory
+    End Function
+
+    Private Function GeTelexDirectory() As String
+        Dim curDir As String = Directory.GetCurrentDirectory()
+        Dim telexDirectory As String = curDir & Path.DirectorySeparatorChar & "InDownloads"
+        Try
+            If Not Directory.Exists(telexDirectory) Then
+                Directory.CreateDirectory(telexDirectory)
+            End If
+
+
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+        End Try
+
+        Return telexDirectory
+    End Function
+
+    Public Function isEmailAddressValid(ByVal emailAddress As String) As Boolean
+
+        Dim isvalid As Boolean = False
+
+        Dim pattern As String = "^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"
+        Dim emailAddressMatch As RegularExpressions.Match = RegularExpressions.Regex.Match(emailAddress, pattern)
+
+        If emailAddressMatch.Success Then
+            isvalid = True
+        Else
+            isvalid = False
+        End If
+        Return isvalid
+    End Function
+
+    Private Function SortArrayOfPendingFileNames(ByVal pendingFilenameArray As String()) As String()
+        Dim array() As String = pendingFilenameArray
+
+        If pendingFilenameArray IsNot Nothing AndAlso pendingFilenameArray.Length > 0 Then
+            Dim arrList As New ArrayList
+            Dim dict As New Dictionary(Of Long, String)
+
+            Dim count As Long = 0
+            For i As Long = 0 To pendingFilenameArray.Length - 1
+
+                If pendingFilenameArray(i).Trim().CompareTo(String.Empty) <> 0 Then
+                    count += 1
+                    arrList.Add(pendingFilenameArray(i).Trim())
+                End If
+            Next
+            If count > 0 Then
+                array = New String(count - 1) {}
+                For i As Long = 0 To count - 1
+                    array(i) = arrList.Item(i)
+                Next
+                System.Array.Sort(array, New FtpFilenameComparer)
+            End If
+
+        End If
+
+        Return array
+    End Function
+
+    Private Function GetLogDirectory() As String
+        Dim curDir As String = Directory.GetCurrentDirectory()
+        Dim logDirectory As String = curDir & Path.DirectorySeparatorChar & "Logs"
+        logDirectory = ReadSetting(LOG_PATH)
+        'Try
+        '    If Not Directory.Exists(logDirectory) Then
+        '        Directory.CreateDirectory(logDirectory)
+        '    End If
+
+
+        'Catch ex As Exception
+        '    Console.WriteLine(ex.Message)
+        'End Try
+
+        Return logDirectory
+    End Function
+
+    Private Function GetLogFileName() As String
+        Dim day As String = DateTime.Now.Day
+        Dim month As String = DateTime.Now.Month
+        Dim year As String = DateTime.Now.Year
+        Dim filename As String = year & "_" & month & "_" & day & ".txt"
+        Return filename
+    End Function
+    Private Function GetRequestDetails(ByVal requestId As Long) As DataSet
+        Dim ds As New DataSet
+        Dim cn As New SqlConnection(GetConnectionStringFromFile())
+        Using cn
+            Try
+                Dim sql As String = "spGetSwiftRequestDetails"
+                cn.Open()
+                Dim cmd As New SqlCommand(sql, cn)
+                Using cmd
+                    cmd.CommandType = CommandType.StoredProcedure
+                    cmd.CommandTimeout = 1000
+                    cmd.Parameters.AddWithValue("@reqID", requestId)
+                    Dim cmdAdapter As New SqlDataAdapter(cmd)
+                    Using cmdAdapter
+                        cmdAdapter.Fill(ds)
+                    End Using
+                End Using
+            Catch ex As Exception
+                'Log the exception
+            Finally
+                If cn IsNot Nothing Then
+                    cn.Close()
+                End If
+            End Try
+        End Using
+
+        Return ds
+    End Function
+
+
+    ''' <summary>
+    ''' Returns the content of the template file.
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Private Function GetTemplateFileContent() As String
+        Dim fileContent As String = String.Empty
+        Dim curDir As String = Directory.GetCurrentDirectory()
+        Dim templateFilename As String = curDir & Path.DirectorySeparatorChar & "Template" & Path.DirectorySeparatorChar & "mandateIBS.htm"
+        Try
+            If File.Exists(templateFilename) Then
+                fileContent = File.ReadAllText(templateFilename)
+            Else
+
+            End If
+
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+        End Try
+
+        Return fileContent
+    End Function
+
+End Module

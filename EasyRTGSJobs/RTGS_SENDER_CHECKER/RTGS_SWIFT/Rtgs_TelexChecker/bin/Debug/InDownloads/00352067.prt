@@ -1,0 +1,56 @@
+
+
+
+31/07/14-17:11:34	            RtgsAck-2067-002078 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1708 140731NAMENGLAAXXX3300423235
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS3120147482274
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 31 July 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #794,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0016409056
+            HARUNA TAHIR
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1010845373
+            MULTIPRO ENTERPRISES LTD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/FT IFO MULTIPRO ENTERPRISES
+	--------------------------- Message Trailer ------------------------	
+       {CHK:5CAC02BBA02B}
+       PKI Signature: MAC & PAC-Equivalent

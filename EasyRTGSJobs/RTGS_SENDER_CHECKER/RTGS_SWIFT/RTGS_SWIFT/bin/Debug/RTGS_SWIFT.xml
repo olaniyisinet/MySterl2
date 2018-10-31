@@ -1,0 +1,149 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+RTGS_SWIFT
+</name>
+</assembly>
+<members>
+<member name="P:RTGS_SWIFT.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:RTGS_SWIFT.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:RTGS_SWIFT.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:RTGS_SWIFT.Impersonator.#ctor(System.String,System.String,System.String)">
+	<summary>
+ Constructor. Starts the impersonation with the given credentials.
+ Please note that the account that instantiates the Impersonator class
+ needs to have the 'Act as part of operating system' privilege set.
+ </summary>
+	<param name="userName">The name of the user to act as.</param>
+	<param name="domainName">The domain name of the user to act as.</param>
+	<param name="password">The password of the user to act as.</param>
+</member><member name="M:RTGS_SWIFT.Impersonator.UndoImpersonation">
+	<summary>
+ Reverts the impersonation.
+ </summary>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.#ctor">
+	<remarks/>
+</member><member name="E:RTGS_SWIFT.ftpService.Service.HelloWorldCompleted">
+	<remarks/>
+</member><member name="E:RTGS_SWIFT.ftpService.Service.FtpUploadFileCompleted">
+	<remarks/>
+</member><member name="E:RTGS_SWIFT.ftpService.Service.FtpDownloadFileCompleted">
+	<remarks/>
+</member><member name="E:RTGS_SWIFT.ftpService.Service.FtpDownloadFileListCompleted">
+	<remarks/>
+</member><member name="E:RTGS_SWIFT.ftpService.Service.FtpDownloadFileStreamCompleted">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.HelloWorld">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.HelloWorldAsync">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.HelloWorldAsync(System.Object)">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.FtpUploadFile(System.String,System.String,System.String,System.String,System.String)">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.FtpUploadFileAsync(System.String,System.String,System.String,System.String,System.String)">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.FtpUploadFileAsync(System.String,System.String,System.String,System.String,System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.FtpDownloadFile(System.String,System.String,System.String,System.String,System.String,System.String)">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.FtpDownloadFileAsync(System.String,System.String,System.String,System.String,System.String,System.String)">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.FtpDownloadFileAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.FtpDownloadFileList(System.String,System.String,System.String,System.String)">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.FtpDownloadFileListAsync(System.String,System.String,System.String,System.String)">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.FtpDownloadFileListAsync(System.String,System.String,System.String,System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.FtpDownloadFileStream(System.String,System.String,System.String,System.String,System.String,System.String)">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.FtpDownloadFileStreamAsync(System.String,System.String,System.String,System.String,System.String,System.String)">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.FtpDownloadFileStreamAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.ftpService.Service.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:RTGS_SWIFT.ftpService.Service">
+	<remarks/>
+</member><member name="P:RTGS_SWIFT.ftpService.Stream.Position">
+	<remarks/>
+</member><member name="P:RTGS_SWIFT.ftpService.Stream.ReadTimeout">
+	<remarks/>
+</member><member name="P:RTGS_SWIFT.ftpService.Stream.WriteTimeout">
+	<remarks/>
+</member><member name="T:RTGS_SWIFT.ftpService.Stream">
+	<remarks/>
+</member><member name="T:RTGS_SWIFT.ftpService.MarshalByRefObject">
+	<remarks/>
+</member><member name="T:RTGS_SWIFT.ftpService.HelloWorldCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RTGS_SWIFT.ftpService.HelloWorldCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RTGS_SWIFT.ftpService.HelloWorldCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RTGS_SWIFT.ftpService.FtpUploadFileCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RTGS_SWIFT.ftpService.FtpUploadFileCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RTGS_SWIFT.ftpService.FtpUploadFileCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RTGS_SWIFT.ftpService.FtpDownloadFileCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RTGS_SWIFT.ftpService.FtpDownloadFileCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RTGS_SWIFT.ftpService.FtpDownloadFileCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RTGS_SWIFT.ftpService.FtpDownloadFileListCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RTGS_SWIFT.ftpService.FtpDownloadFileListCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RTGS_SWIFT.ftpService.FtpDownloadFileListCompletedEventArgs">
+	<remarks/>
+</member><member name="T:RTGS_SWIFT.ftpService.FtpDownloadFileStreamCompletedEventHandler">
+	<remarks/>
+</member><member name="P:RTGS_SWIFT.ftpService.FtpDownloadFileStreamCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="T:RTGS_SWIFT.ftpService.FtpDownloadFileStreamCompletedEventArgs">
+	<remarks/>
+</member><member name="M:RTGS_SWIFT.Module1.FormatSwift(System.String,System.Int32,System.Int32,System.String,System.Boolean)">
+	<summary>
+ Formats the remark to conform to the number of rows and columns and the line prefix supplied.
+ It does not add the line prefix to the first line. That means that if you want the line prefix on the first line of the resulting
+ formatted string, then you should add it prior to calling this function.
+ This function truncates to exactly LESS_THAN_OR_EQUAL_TO rows as the number of rows that you will have in the formatted output.
+ </summary>
+	<param name="remarks">the string you want to format</param>
+	<param name="rows">the number of rows you'd ideally like to have.</param>
+	<param name="cols">then umber of columns to appear in the formatted output.</param>
+	<param name="linePrefix">the string to prepend to each line except the first line.</param>
+	<returns></returns>
+	<remarks>throws an invalid argument exception if the string to format is empty or null.</remarks>
+</member><member name="M:RTGS_SWIFT.Module1.ReadFromSwiftOutbox">
+The method below has not been fully implemented it should read from the output folder on SWIFT and then send the telex or ACKed copy to the customer via email.
+ 
+
+</member><member name="M:RTGS_SWIFT.Module1.FtpUploadFile(System.String,System.String,System.String,System.String,System.String)">
+	<summary>
+ Uploads a file for upload to the SWIFT Server via FTP.
+ </summary>
+	<param name="ftpHost">The IP address of the FTP host.</param>
+	<param name="filenameToUpload">the filename of the file to be uploaded either full filepath or just the file name only.</param>
+	<param name="uploadFolderName">The folder to which you want to upload.</param>
+	<returns>a sttring that identifies whether the upload succeeded.</returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

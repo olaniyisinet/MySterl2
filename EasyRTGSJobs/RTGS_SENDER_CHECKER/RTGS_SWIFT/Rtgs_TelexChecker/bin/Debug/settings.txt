@@ -1,0 +1,4 @@
+ERROR_COUNT=10
+ERROR_MAIL=oluwakayode.osagbemi@sterlingbankng.com, emmanuel.omofuriota@sterlingbankng.com
+LOG_PATH=E:\AppLogs\Trade\Logs\FileChecker
+

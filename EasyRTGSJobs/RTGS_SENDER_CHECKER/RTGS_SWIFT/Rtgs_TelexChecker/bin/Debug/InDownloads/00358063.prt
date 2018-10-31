@@ -1,0 +1,66 @@
+
+
+
+18/08/14-12:03:05	            RtgsAck-8063-002362 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1200 140818NAMENGLAAXXX3308427425
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : FBNINGLAXXX
+                  FIRST BANK OF NIGERIA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS182014802468
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 18 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #124,936,874.30#
+       50K: Ordering Customer-Name & Address
+            /0003770022
+            AZARE JERE IRRIGATION SCHEME 
+            PHASE 1
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024749
+            FBNINGLA
+            FIRST BANK OF NIGERIA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /2025106321
+            MAKIN ENGINEERS NIGERIA LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BNG PYMT OF INTERIM CERT 1 TO
+            //THE COY FOR HYDRAULIC 
+            //INFRASTRUCTURE AND NAT SECURITY
+	--------------------------- Message Trailer ------------------------	
+       {CHK:10AB9E2F2B99}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 18/08/14 12:02:49
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3308427425}{4:{177:1408181200}{451:0}}

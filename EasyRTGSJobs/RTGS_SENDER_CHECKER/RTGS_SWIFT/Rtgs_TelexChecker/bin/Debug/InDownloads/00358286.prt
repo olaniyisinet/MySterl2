@@ -1,0 +1,58 @@
+
+
+
+01/09/14-13:57:55	            RtgsAck-8286-002585 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1355 140901NAMENGLAAXXX3310430655
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS120149342749
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 01 September 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #15,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0010992589
+            METROTECH GLOBAL PROJECT LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1013868812
+            JAZZAF GLOBAL RESOURCES NIG LTD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BNG RTGS TRF TO ZENITH BANK IF
+            //O JAZZAF GLOBAL BOO METROTECH GLO
+            //BAL
+	--------------------------- Message Trailer ------------------------	
+       {CHK:EF1E7114CADF}
+       PKI Signature: MAC & PAC-Equivalent

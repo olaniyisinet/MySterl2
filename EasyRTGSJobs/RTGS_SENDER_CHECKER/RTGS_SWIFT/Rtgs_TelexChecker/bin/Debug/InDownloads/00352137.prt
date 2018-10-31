@@ -1,0 +1,56 @@
+
+
+
+05/08/14-11:19:08	            RtgsAck-2137-002149 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1116 140805NAMENGLAAXXX3301423986
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : FBNINGLAXXX
+                  FIRST BANK OF NIGERIA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS520148272076
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 05 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #26,925,839.00#
+       50K: Ordering Customer-Name & Address
+            /0009923394
+            RITE FOODS LIMITED
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024749
+            FBNINGLA
+            FIRST BANK OF NIGERIA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /2013365998
+            ELEKTRINT (NIGERIA) LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/IFO ELEKTRINK NIG LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:6BE3A61504E4}
+       PKI Signature: MAC & PAC-Equivalent

@@ -1,0 +1,58 @@
+
+
+
+20/05/14-11:45:36	            RtgsAck-0647-000657 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1141 140520NAMENGLAAXXX3290405707
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : UBNINGLAXXX
+                  UNION BANK OF NIGERIA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS202014582582
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 20 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #12,944,332.80#
+       50K: Ordering Customer-Name & Address
+            /0022650462
+            MLH GLOBAL SERVICES LTD.
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026389
+            UBNINGLA
+            UNION BANK OF NIGERIA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0040795361
+            PRIMA COPORATION LTD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRF BOO MLH GLOBAL SERVIC
+            //ES LTD. IFO PRIMA CORPORATION LIM
+            //ITED  UNION BANK
+	--------------------------- Message Trailer ------------------------	
+       {CHK:A269961695CB}
+       PKI Signature: MAC & PAC-Equivalent

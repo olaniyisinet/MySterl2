@@ -1,0 +1,58 @@
+
+
+
+04/08/14-11:23:52	            RtgsAck-2107-002118 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1120 140804NAMENGLAAXXX3301423722
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : UNAFNGLAXXX
+                  UNITED BANK FOR AFRICA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS42014841475
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 04 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #75,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0022845765
+            KOGI STATE STATUTORY REV. ACCT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026413
+            UNAFNGLA
+            UNITED BANK FOR AFRICA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1001751014
+            KOGI STATE HOUSE OF ASSEMBLY
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BALANCE PAYMENT OF 2014 CONSTI
+            //TUENCY PROJECT FUNDS TO HON MEMBE
+            //RS KOGI STATE HOUSE OF ASSEMBLY
+	--------------------------- Message Trailer ------------------------	
+       {CHK:C928262D0C39}
+       PKI Signature: MAC & PAC-Equivalent

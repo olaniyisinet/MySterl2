@@ -1,0 +1,57 @@
+
+
+
+03/06/14-12:37:16	            RtgsAck-0945-000955 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1233 140603NAMENGLAAXXX3294409655
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : UNAFNGLAXXX
+                  UNITED BANK FOR AFRICA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS320146404059
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 03 June 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #356,228,942.19#
+       50K: Ordering Customer-Name & Address
+            /0022845765
+            KOGI STATE STATUTORY REV. ACCT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026413
+            UNAFNGLA
+            UNITED BANK FOR AFRICA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1016753089
+            KOGI STATE PENSION BOARD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/MONTHLY PENSION RELEASE FOR MA
+            //Y, 2014
+	--------------------------- Message Trailer ------------------------	
+       {CHK:F3A3B82E8133}
+       PKI Signature: MAC & PAC-Equivalent

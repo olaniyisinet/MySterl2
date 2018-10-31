@@ -1,0 +1,57 @@
+
+
+
+28/05/14-12:42:06	            RtgsAck-0849-000859 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1238 140528NAMENGLAAXXX3293408378
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS2820145141613
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 28 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #20,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0019755273
+            SALTA INFRS AND CONST CO.LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1012142636
+            LIEBHERR NIG LTD-ABUJA OPS A/C
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BNG TRSF IFO M/S LIEBHERR NIG.
+            // LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:0E18E380666E}
+       PKI Signature: MAC & PAC-Equivalent

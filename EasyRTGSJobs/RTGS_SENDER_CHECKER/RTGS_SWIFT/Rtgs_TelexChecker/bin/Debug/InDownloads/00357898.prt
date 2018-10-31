@@ -1,0 +1,1596 @@
+
+
+
+07/08/14-14:41:30	            RtgsAck-7898-002168 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1055 140806NAMENGLAAXXX3302424370
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS620148374714
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #150,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0016732480
+            NIG.AGRIC.CO-OP.AND RURAL DEV
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1010967147
+            BANK OF AGRICULTURE REMITTANCE A/C
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRSF IFO BANK OF AGRICULTURE
+	--------------------------- Message Trailer ------------------------	
+       {CHK:2E9BF9F4DFEE}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1129 140806NAMENGLAAXXX3302424380
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : PRDTNGLAXXX
+                  SKYE BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS620148282038
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #152,839,393.50#
+       50K: Ordering Customer-Name & Address
+            /0016850531
+            SAMTL/OSUN SUKUK COY PLC
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000025698
+            PRDTNGLA
+            SKYE BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1750039983
+            SKYE TRUSTEES LIMITED/OSUN STATE SU
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BNG RTGS IFO SKYE TRUSTEES/OSU
+            //N STATE SUKUK
+	--------------------------- Message Trailer ------------------------	
+       {CHK:5691A3992AF9}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1130 140806NAMENGLAAXXX3302424382
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ABNGNGLAXXX
+                  ACCESS BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS62014824571
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #25,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0017638534
+            KNIGHTHEAD DREDGING LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000023539
+            ABNGNGLA
+            ACCESS BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0001612264
+            JUANITA HOTELS LTD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF
+	--------------------------- Message Trailer ------------------------	
+       {CHK:34ABA5D11187}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1132 140806NAMENGLAAXXX3302424383
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : UNAFNGLAXXX
+                  UNITED BANK FOR AFRICA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS620148434925
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #19,125,006.00#
+       50K: Ordering Customer-Name & Address
+            /0017263813
+            SUB-TREASURY SALARY ACCOUNT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026413
+            UNAFNGLA
+            UNITED BANK FOR AFRICA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1002999358
+            FEDERAL MORTGAGE BANK OF NIGERIA
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF TO UBA BOO FEDERAL MORTGAG
+            //E BANK GUSAU
+	--------------------------- Message Trailer ------------------------	
+       {CHK:331F1BE519D8}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1133 140806NAMENGLAAXXX3302424384
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : FBNINGLAXXX
+                  FIRST BANK OF NIGERIA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS620148465970
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #21,985,151.00#
+       50K: Ordering Customer-Name & Address
+            /0017263813
+            SUB-TREASURY SALARY ACCOUNT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024749
+            FBNINGLA
+            FIRST BANK OF NIGERIA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /2009328800
+            FPCNL/PPL - ZAMFARA STATE PENSION
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF TO FBN BOO ZAMFARA STATE C
+            //ONTRIBUTION
+	--------------------------- Message Trailer ------------------------	
+       {CHK:A7F6F2F01883}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1135 140806NAMENGLAAXXX3302424385
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : WEMANGLAXXX
+                  WEMA BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS620148262734
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #50,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0001332723
+            ELIZADE NIGERIA LIMITED
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026499
+            WEMANGLA
+            WEMA BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0122069835
+            TOYOTA NIGERIA LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TO WEMA IFO TOYOTA NIG LT
+            //D B/O ELIZADE  NIG LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:5641F2179673}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1137 140806NAMENGLAAXXX3302424386
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : UBNINGLAXXX
+                  UNION BANK OF NIGERIA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS62014874040
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #46,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0009596464
+            ADEOYE KABIRU
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026389
+            UBNINGLA
+            UNION BANK OF NIGERIA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0000976001
+            LAWAL SA MR
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BNG RTGS TRSF IFO SIKIRU AYOOL
+            //A LAWAL
+	--------------------------- Message Trailer ------------------------	
+       {CHK:A8A559C92401}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1220 140806NAMENGLAAXXX3302424398
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : DBLNNGLAXXX
+                  DIAMOND BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS620148173258
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #155,081,100.00#
+       50K: Ordering Customer-Name & Address
+            /0000814642
+            SAFETRUST MORTGAGE BANK LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024426
+            DBLNNGLA
+            DIAMOND BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0001150712
+            HORATIO LTD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRFR TO DIAMOND BNK HORATIO LI
+            //MITED BO SAFETRUST MORTGAGE BANK 
+            //LTD ( 0001150712 )
+	--------------------------- Message Trailer ------------------------	
+       {CHK:5B6D9FF94A8D}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1225 140806NAMENGLAAXXX3302424401
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : SBICNGLXXXX
+                  STANBIC IBTC BANK PLC
+                  (HEAD OFFICE)
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS620148365852
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #23,100,209.55#
+       50K: Ordering Customer-Name & Address
+            /0003518381
+            ARCO PETROCHEMICAL ENG.CO.LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000025296
+            SBICNGLX
+            STANBIC IBTC BANK PLC
+            (HEAD OFFICE)
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /9200383129
+            CLIENTS AND APOS ACC-MANNY INSURAN
+            CE BROKERS LTD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRF IFO MANNY INSURANCE B
+            //ROKERS LTD BOO ARCO PETROCHEMICAL
+            // ENG.CO.LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:B691325B5FC4}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1251 140806NAMENGLAAXXX3302424412
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS62014893544
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #18,277,912.17#
+       50K: Ordering Customer-Name & Address
+            /0013818112
+            DELTA STATE GOVERNMENT(TCO)ACC
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1010336354
+            DELTA BROADCASTING SERVICE,
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRF BOO DSTG TCO IFO GM, 
+            //DELTA BROADCASTING SERVICE, ASABA
+	--------------------------- Message Trailer ------------------------	
+       {CHK:06C9E4E4ED80}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1347 140806NAMENGLAAXXX3302424457
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : UNAFNGLAXXX
+                  UNITED BANK FOR AFRICA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS620148391218
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #13,828,560.24#
+       50K: Ordering Customer-Name & Address
+            /0026111433
+            DEGEMA LOCAL GOVERNMENT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026413
+            UNAFNGLA
+            UNITED BANK FOR AFRICA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1016329576
+            REMITTANCE TRANSIT ACCOUNT
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRANSFER TO UBA IFO REMIT
+            //TANCE TRANSIT ACCOUNT BOO DEGEMA 
+            //LOCAL GOVERNMENT
+	--------------------------- Message Trailer ------------------------	
+       {CHK:F82AAB60769E}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1348 140806NAMENGLAAXXX3302424458
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : FCMBNGLAXXX
+                  FIRST CITY MONUMENT BANK
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS62014805868
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #10,300,786.00#
+       50K: Ordering Customer-Name & Address
+            /0010049665
+            KD.ST.LGC JOINT STATUTORY ACC
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024763
+            FCMBNGLA
+            FIRST CITY MONUMENT BANK
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0928817019
+            KACHIA L.G.A
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF IFO KACHIA LGVT-FCMB PLC-B
+            //OO MINISTRY OF FINANCE KADST
+	--------------------------- Message Trailer ------------------------	
+       {CHK:2F428BEB7646}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1349 140806NAMENGLAAXXX3302424460
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ECOCNGLAXXX
+                  ECOBANK NIGERIA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS6201488782
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #37,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0003989121
+            SARO AGROSCIENCES
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024495
+            ECOCNGLA
+            ECOBANK NIGERIA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1172001043
+            SARO AGROSCIENCES LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF SARO AGROSCIENCES LIMITED
+	--------------------------- Message Trailer ------------------------	
+       {CHK:5B2675DD6274}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1401 140806NAMENGLAAXXX3302424467
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ABNGNGLAXXX
+                  ACCESS BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS620148525181
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #16,822,130.00#
+       50K: Ordering Customer-Name & Address
+            /0002668502
+            DANTATA AND SAWOE CONST.CO.NIG
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000023539
+            ABNGNGLA
+            ACCESS BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0009560275
+            DANTATA TOWN DEVELOPERS LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS BOO DANTATA - SAWOE
+	--------------------------- Message Trailer ------------------------	
+       {CHK:579B4A0A6FCA}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1404 140806NAMENGLAAXXX3302424468
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS620148191862
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #100,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0007079314
+            AZMAN OIL AND GAS LTD.
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1010023333
+            TOTAL  NIGERIA PLC .
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS BOO AZMAN OIL - GAS LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:C6113F57943B}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1406 140806NAMENGLAAXXX3302424469
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS62014833533
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #26,235,000.00#
+       50K: Ordering Customer-Name & Address
+            /0011777543
+            JUGATE NIGERIA LIMITED
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1010746384
+            KWAKYAMA OIL  AND AMP GAS CO. LTD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BNG TRANSFER FROM V TO KWAKYAM
+            //A OIL - GAS LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:F7FEEDA05D91}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1430 140806NAMENGLAAXXX3302424487
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ABNGNGLAXXX
+                  ACCESS BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS62014824371
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 06 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #100,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0025230993
+            SAHARA ENERGY RESOURCE LIMITED
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000023539
+            ABNGNGLA
+            ACCESS BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0001633959
+            SAHARA ENERGY RESOURCES (NIG) LTD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRANSFER
+	--------------------------- Message Trailer ------------------------	
+       {CHK:BC2D7736DE3E}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1518 140806NAMENGLAAXXX3302424541
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ABNGNGLAXXX
+                  ACCESS BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS32014724131
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 03 July 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #100,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0025230993
+            SAHARA ENERGY RESOURCE LIMITED
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000023539
+            ABNGNGLA
+            ACCESS BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0001633959
+            SAHARA ENERGY RESOURCES (NIG) LTD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS
+	--------------------------- Message Trailer ------------------------	
+       {CHK:29D65326EAE1}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1009 140807NAMENGLAAXXX3303424717
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : FCMBNGLAXXX
+                  FIRST CITY MONUMENT BANK
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS720148422763
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 07 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #28,602,895.02#
+       50K: Ordering Customer-Name & Address
+            /0009367433
+            PROVIDER OF MATERIALANDSERVS LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024763
+            FCMBNGLA
+            FIRST CITY MONUMENT BANK
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1277075017
+            NAJEY VENTURES
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF TO NAJEY VENTURES BOO PROV
+            //IDER OF MATERIALS AND SERVICES LT
+            //D
+	--------------------------- Message Trailer ------------------------	
+       {CHK:C872D6797FC3}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1116 140807NAMENGLAAXXX3304424719
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : PRDTNGLAXXX
+                  SKYE BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS720148101586
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 07 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #300,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0005018524
+            COVENANT MICROFINANCE BANK LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000025698
+            PRDTNGLA
+            SKYE BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1771600153
+            WORLD MISSION AGENCY
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF TO WORLD MISSION AGENCY B/
+            //O COVENANT MICROFINANCE BANK LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:7E06BB735246}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1227 140807NAMENGLAAXXX3304424738
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS72014813051
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 07 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #212,500,000.00#
+       50K: Ordering Customer-Name & Address
+            /0007604129
+            LSDPC(PROJ A/C A.O SHOPN MALL
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1140005117
+            FOUNDATION SYSTEMS NIG. LTD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF BOO LAG ST DEVT - PROP. CO
+            //R.
+	--------------------------- Message Trailer ------------------------	
+       {CHK:2C0404C09230}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1232 140807NAMENGLAAXXX3304424740
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS720148415721
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 07 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #15,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0018949613
+            TOGHBAH VENTURES
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1013563409
+            RED BRICK HOMES INT L LTD(PROJ A/C)
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TO ZIB IFO REDBRICK HOMES
+            // INTL LTD B/O TOGHBAH VENTURES
+	--------------------------- Message Trailer ------------------------	
+       {CHK:B81B76FE40BA}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1233 140807NAMENGLAAXXX3304424741
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : UNAFNGLAXXX
+                  UNITED BANK FOR AFRICA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS720148433725
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 07 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #55,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0010389260
+            ORINTORY ENERGY LIMITED
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026413
+            UNAFNGLA
+            UNITED BANK FOR AFRICA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1005552666
+            ORINTORY ENERGY LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRF TO UBA IFO ORINTORY E
+            //NERGY LIMITED BOO ORINTORY ENERGY
+            // LIMITED
+	--------------------------- Message Trailer ------------------------	
+       {CHK:80253BA5D255}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1235 140807NAMENGLAAXXX3304424744
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : FBNINGLAXXX
+                  FIRST BANK OF NIGERIA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS72014837614
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 07 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #54,538,000.00#
+       50K: Ordering Customer-Name & Address
+            /0007322955
+            CRUSADER STERLING PENSIONS LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024749
+            FBNINGLA
+            FIRST BANK OF NIGERIA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /2010090592
+            FPCNL RE CRUSADER - STERLING STATUT
+            ORY RESERVE FUND ACCOUNT
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BNG RTGS TO FBN IFO FPCNL: RE 
+            //CRUSADER STERLING STATUTORY RES F
+            //UND A/C B/O CRUSADER STERLING PEN
+            //SIONS LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:341FD225C38C}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1242 140807NAMENGLAAXXX3304424752
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS72014852481
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 07 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #100,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0027653530
+            IFEDI JUDE IKECHUKWU
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1013957646
+            CRENFACT VENTURES LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS BOO IFEDI JUDE CHUKWU
+	--------------------------- Message Trailer ------------------------	
+       {CHK:3FC80F96F1C3}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1244 140807NAMENGLAAXXX3304424753
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : DBLNNGLAXXX
+                  DIAMOND BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS72014853043
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 07 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #40,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0020593842
+            WABOD GLOBAL RESOURCES LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024426
+            DBLNNGLA
+            DIAMOND BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0023159287
+            DON SIMON VENTURES
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRF B/O WABOD GLOBAL RESO
+            //URCES LTD IFO DON SIMON VENTURES
+	--------------------------- Message Trailer ------------------------	
+       {CHK:A2963F8E1CD9}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1312 140807NAMENGLAAXXX3304424763
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : UNAFNGLAXXX
+                  UNITED BANK FOR AFRICA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS72014871740
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 07 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #19,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0009486196
+            LAG.STATE WASTE MGT.AUTHORITY
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026413
+            UNAFNGLA
+            UNITED BANK FOR AFRICA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1017512267
+            BELLWETHER NIGERIA LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRSF BOO LAWMA IFO BELLWETHER 
+            //NIG LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:AF0B405292E9}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1330 140807NAMENGLAAXXX3304424782
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : FCMBNGLAXXX
+                  FIRST CITY MONUMENT BANK
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS720148322645
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 07 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #38,778,981.86#
+       50K: Ordering Customer-Name & Address
+            /0020521629
+            ENSG SALARY ACCOUNT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024763
+            FCMBNGLA
+            FIRST CITY MONUMENT BANK
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1267020010
+            ENUGU STATE GOVERNMENT -IGR
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TFR TO ENSG (IGR POOL A/C)
+	--------------------------- Message Trailer ------------------------	
+       {CHK:A8A026E152F8}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1426 140807NAMENGLAAXXX3304424810
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS720148204323
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 07 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #17,388,000.00#
+       50K: Ordering Customer-Name & Address
+            /0013987117
+            MINISTRY OF HEALTH
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1013939691
+            SYL-WRIGHT LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/SYL-WRIGHT LTD/ZIB/1013939691 
+            //BOO MINISTRY OF HEALTH
+	--------------------------- Message Trailer ------------------------	
+       {CHK:949406D02291}
+       PKI Signature: MAC & PAC-Equivalent
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1427 140807NAMENGLAAXXX3304424812
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS720148141213
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 07 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #16,649,340.27#
+       50K: Ordering Customer-Name & Address
+            /0013818112
+            DELTA STATE GOVERNMENT(TCO)ACC
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1013204601
+            BUR.FOR STATE PEN
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRF BOO DSTG TCO IFO SEC,
+            // CONTRIBUTORY PENSION SCHEME
+	--------------------------- Message Trailer ------------------------	
+       {CHK:1BF1EAB18DDE}
+       PKI Signature: MAC & PAC-Equivalent

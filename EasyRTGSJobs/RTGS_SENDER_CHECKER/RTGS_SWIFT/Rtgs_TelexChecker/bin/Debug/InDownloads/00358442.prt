@@ -1,0 +1,57 @@
+
+
+
+08/09/14-16:00:46	            RtgsAck-8442-002741 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1558 140908NAMENGLAAXXX3311432418
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : FCMBNGLAXXX
+                  FIRST CITY MONUMENT BANK
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS820149142613
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 08 September 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #15,260,893.00#
+       50K: Ordering Customer-Name & Address
+            /0003929930
+            PRESTIGE ASSURANCE PLC
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024763
+            FCMBNGLA
+            FIRST CITY MONUMENT BANK
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0128508016
+            POLY PRODUCTS NIGERIA LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BEING RTGS TO FCMB IFO POLY PR
+            //ODUCTS NIG PLC B/O PRESTIGE
+	--------------------------- Message Trailer ------------------------	
+       {CHK:CC25B1D59B11}
+       PKI Signature: MAC & PAC-Equivalent

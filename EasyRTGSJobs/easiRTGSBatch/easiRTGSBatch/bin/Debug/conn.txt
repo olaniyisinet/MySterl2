@@ -1,0 +1,1 @@
+user id=sa;password=tylent;initial catalog=easyRTGSDb;data source=10.0.41.101

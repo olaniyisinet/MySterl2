@@ -1,0 +1,63 @@
+
+
+
+14/05/14-12:32:02	            RtgsAck-0582-000592 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1247 140514NAMENGLAAXXX3286404117
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ABNGNGLAXXX
+                  ACCESS BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS1420145554146
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 14 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #52,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0003026183
+            ETERNA PLC
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000023539
+            ABNGNGLA
+            ACCESS BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0001619665
+            ETERNA PLC
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF TO ETERNA PLC  ACCESS BANK
+	--------------------------- Message Trailer ------------------------	
+       {CHK:B2FA4C1AF755}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 14/05/14 12:31:43
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3286404117}{4:{177:1405141247}{451:0}}

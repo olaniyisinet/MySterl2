@@ -1,0 +1,57 @@
+
+
+
+28/05/14-13:59:11	            RtgsAck-0852-000862 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1355 140528NAMENGLAAXXX3293408431
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : DBLNNGLAXXX
+                  DIAMOND BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS2820145493936
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 28 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #41,065,479.90#
+       50K: Ordering Customer-Name & Address
+            /0009578763
+            ACCOUNTANT GENERAL (KDSG)
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024426
+            DBLNNGLA
+            DIAMOND BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0028830482
+            GLOBAL GENERAL ENGINEERING LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF IFO GLOBAL GENERAL ENGR LT
+            //D-DBP-BOO MIN OF FINANCE
+	--------------------------- Message Trailer ------------------------	
+       {CHK:3950D659B37B}
+       PKI Signature: MAC & PAC-Equivalent

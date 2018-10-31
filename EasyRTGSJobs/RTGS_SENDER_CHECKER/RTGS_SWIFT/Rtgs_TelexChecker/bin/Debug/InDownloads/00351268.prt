@@ -1,0 +1,60 @@
+
+
+
+20/06/14-12:24:11	            RtgsAck-1268-001278 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1220 140620NAMENGLAAXXX3296414305
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : PRDTNGLAXXX
+                  SKYE BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS2020146143813
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 20 June 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #30,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0000814642
+            SAFETRUST MORTGAGE BANK LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000025698
+            PRDTNGLA
+            SKYE BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /4010002394
+            VIBROFLOTATION  AND AMP GEOTECHNIC
+            AL NIG.L
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRFR TO SKYE BNK VIBROFLOTATIO
+            //N - GEOTECHNICAL NIGERAI LIMITED 
+            //BO SAFETRUST MORTGAGE BANK LTD (4
+            //010002394)
+	--------------------------- Message Trailer ------------------------	
+       {CHK:388E618BE674}
+       PKI Signature: MAC & PAC-Equivalent

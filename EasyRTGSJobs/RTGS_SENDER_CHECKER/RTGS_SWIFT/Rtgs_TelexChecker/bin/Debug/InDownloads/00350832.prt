@@ -1,0 +1,56 @@
+
+
+
+27/05/14-17:33:48	            RtgsAck-0832-000842 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1729 140527NAMENGLAAXXX3293408189
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : DBLNNGLAXXX
+                  DIAMOND BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS2720145405759
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 27 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #685,644,124.25#
+       50K: Ordering Customer-Name & Address
+            /0019328680
+            BYSG CONSOLIDATED REV A/C FAAC
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024426
+            DBLNNGLA
+            DIAMOND BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0016437237
+            BYSG CAPT DEVP FUND
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/LOAN REPAYMT-ISPO/DIAMOND BANK
+	--------------------------- Message Trailer ------------------------	
+       {CHK:341AB66BF7D3}
+       PKI Signature: MAC & PAC-Equivalent

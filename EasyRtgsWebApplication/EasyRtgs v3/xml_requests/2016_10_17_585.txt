@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" ?><IBSRequest><ReferenceID>161017102354</ReferenceID><RequestType>105</RequestType><ReferenceID>6234586</ReferenceID><ToAccount>MINISTRY O</ToAccount><DestinationBankCode>058</DestinationBankCode></IBSRequest>

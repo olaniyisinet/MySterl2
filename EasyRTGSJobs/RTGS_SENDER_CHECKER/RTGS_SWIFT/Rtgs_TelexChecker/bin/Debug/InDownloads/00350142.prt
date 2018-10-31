@@ -1,0 +1,64 @@
+
+
+
+11/04/14-17:01:10	            RtgsAck-0142-000143 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1715 140411NAMENGLAAXXX3278396574
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : PRDTNGLAXXX
+                  SKYE BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS1120144303841
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 11 April 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #10,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0006660573
+            OGUGUA BENJAMIN O
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000025698
+            PRDTNGLA
+            SKYE BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1040677963
+            BEN AND AZUKA OGUGUA
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF TO SKYEBANK IFO BEN AND AZ
+            //UKA OGUGUA BOO BENJAMIN OGUGUA
+	--------------------------- Message Trailer ------------------------	
+       {CHK:31AE75EB1102}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 11/04/14 17:00:55
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3278396574}{4:{177:1404111715}{451:0}}

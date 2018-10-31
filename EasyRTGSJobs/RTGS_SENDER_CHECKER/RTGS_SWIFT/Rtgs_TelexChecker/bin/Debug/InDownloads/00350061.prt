@@ -1,0 +1,65 @@
+
+
+
+07/04/14-11:16:20	            RtgsAck-0061-000062 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1131 140407NAMENGLAAXXX3276394840
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : PRDTNGLAXXX
+                  SKYE BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS720144584612
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 07 April 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #16,650,000.00#
+       50K: Ordering Customer-Name & Address
+            /0024703922
+            CENTRAL-SOUTH CONSTR. COY LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000025698
+            PRDTNGLA
+            SKYE BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1771354456
+            ANICIENT CASTLES TRADING COMPANY LI
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BNG RTGS TO SKYE BANK IFO ANIC
+            //IENT CASTLES TRADING CO LTD B/O C
+            //ENTRAL SOUTH CONSTR. COY
+	--------------------------- Message Trailer ------------------------	
+       {CHK:06A2BF47DBE2}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 07/04/14 11:16:01
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3276394840}{4:{177:1404071131}{451:0}}

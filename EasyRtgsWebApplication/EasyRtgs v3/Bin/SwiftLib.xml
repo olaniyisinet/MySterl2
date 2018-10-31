@@ -1,0 +1,644 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SwiftLib
+</name>
+</assembly>
+<members>
+<member name="P:SwiftLib.IValidator.ValidationTarget">
+	<summary>
+ This will represent the object that validator is targeting. That is, what it is meant to validate.
+ </summary>
+	<value>The object to be validated</value>
+	<returns>The object that will be validated</returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.IValidator.Validate">
+	<summary>
+ Performs the validation operation and returns a boolean indicating whether validation succeeds or fails.
+ </summary>
+	<returns>a boolean indicating the success or failure of validation of the validation target.</returns>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.IValidator.ValidationMessage">
+	<summary>
+ This is a free text representation of the outcome of the validation process.
+ It can be used to present detailed validation messages for instance the reason why the validation failed
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>It is read-only.</remarks>
+</member><member name="T:SwiftLib.IValidator">
+	<summary>
+ This interface defines an object that can perform validation operations on a message
+ So for instance we could create an object that performs validation of destination terminal of messages.
+ Or another object that performs the validation of other parts of a message.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:SwiftLib.Field46A">
+	<summary>
+ Documents Required.
+ This is a multiline field.
+ It allows up to 100 lines of 65 characters each.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:SwiftLib.Renderable.RenderingMode.Telex">
+	<summary>
+ Specifies that rendering should be in the 
+ encrypted SWIFT format
+ e.g
+ <example><br/>
+ :20:SBK/FT/12/88967<br/>
+		</example>
+	</summary>
+	<remarks></remarks>
+</member><member name="F:SwiftLib.Renderable.RenderingMode.Expanded">
+	<summary>
+ Specifies that rendering should be in the 
+ expanded format which shows the description of the field
+ e.g
+ <example><br/>
+ Senders Reference<br/>
+ :20:  SBK/FT/12/88967<br/>
+		</example>
+	</summary>
+	<remarks></remarks>
+</member><member name="T:SwiftLib.Field43P">
+	<summary>
+ Represents Partial Shipments.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Mt940Message.CreateHeader(System.String)">
+	<summary>
+ Returns the swift header for this message type.
+ 
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field13C.#ctor(System.String)">
+	<summary>
+ Field constructor with one argument which will be the content.
+ </summary>
+	<param name="_content"></param>
+	<remarks></remarks>
+</member><member name="T:SwiftLib.Field22A">
+	<summary>
+ This field specifies the function of the message. 
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field44A.Validate">
+	<summary>
+ The SWIFT format is a simple 65 characters (Narrative)
+ Validates the content to ensure that it conforms with the stated format in the specification.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:SwiftLib.InvalidFieldFormatException">
+	<summary>
+ Indicates that something is wrong with a Field.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field32A.Parse_Expanded_Out(System.String)">
+	<summary>
+ Parses out the content of a MT103 file into the 
+ expanded format.
+ 
+ </summary>
+	<param name="content"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field33B.Parse_Expanded_Out(System.String)">
+	<summary>
+ Parses out the content of a MT103 file into the 
+ expanded format.
+ 
+ </summary>
+	<param name="content"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.FieldErrorEventArg.Message">
+	<summary>
+ Sets or retrieves the message of the event.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:SwiftLib.FieldErrorEventArg">
+	<summary>
+ This class represents an event argument for when a Field error event
+ has occurred.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Mt202Message.CreateHeader(System.String)">
+	<summary>
+ Returns the swift header for this message type.
+ 
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:SwiftLib.Mt900Message">
+	<summary>
+ Represents a MT900 message
+ MT900: Confirmation of Debit.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:SwiftLib.Field43T">
+	<summary>
+ Transshipments
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field25.Validate">
+	<summary>
+ Validates that the field length must be between 1 and 35.
+ </summary>
+	<returns>a boolean indicating validaty. TRUE for valid message and FALSE for invalid message.</returns>
+	<remarks>The validity of the message.</remarks>
+</member><member name="M:SwiftLib.Field40A.Validate">
+	<summary>
+ The format is 24x. It should contain 24 characters.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field42C.Validate">
+	<summary>
+ validates the content which can be  up to 3 lines of 35 characters each.
+ </summary>
+	<returns>
+	</returns>
+	<remarks></remarks>
+</member><member name="T:SwiftLib.Field42C">
+	<summary>
+ Drafts At...
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field59.GetValidVersionOfNameAndAddress(System.String,System.Boolean)">
+	<summary>
+ Receives a string meant for the field 59 name and address and returns a version of the same 
+ string that is Field59 compliant.
+ If the string passed in cannot be made Field 59 compliant, it returns Nothing.
+ </summary>
+	<param name="content">A string to be converted and made compliant</param>
+	<returns>a valid version or NOTHING if this cannot be achieved</returns>
+	<remarks>Please check for NOTHING. It cannot return empty string.</remarks>
+</member><member name="M:SwiftLib.Field27.Validate">
+	<summary> 
+  The SWIFT format is (Number)/(Total)
+ 1!n/1!n
+ </summary>
+	<returns>if valid returns true else returns false </returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field82A.Validate">
+	<summary>
+ There may be two lines
+ <code>
+ [/1!a][/34x]         (Party Identifier)
+ 4!a2!a2!c[3!c]       (BIC/BEI)
+ </code>
+	</summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:SwiftLib.Field.invalidCharacterArray">
+	<summary>
+ Returns an array of characters that contains the list of characters that will not 
+ be allowed in a SWIFT message.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field.#ctor(System.String)">
+	<summary>
+ Create a field with the content as the argument.
+ </summary>
+	<param name="_content">The field content</param>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.Field.DbConnectionString">
+	<summary>
+ The database connection string to use for retrieving information about SWIFT that you have stored in your enterprise.
+ It takes the connection string and uses it as an SqlConnection
+ </summary>
+	<value>the connection string. if null or empty the connection string is defaulted.</value>
+	<returns>the connection string</returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field.CompareTo(System.Object)">
+	<summary>
+ This method is used to compare or 'order' two <code>Field</code> objects.
+ Returns 0 if the both objects are 'equal' and returns 1 if the invoking instance is
+ greateer than the passed-in instance and returns a negative number if the invoking instance
+ is less than the passed-in instance.
+ </summary>
+	<param name="obj">The Field to be compared to.</param>
+	<returns>a positive, zero or negative number. See description.</returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field.ExpandSwiftCode(System.String,System.String)">
+	<summary>
+ Expands the supplied SWIFT code into its bank name, address, street etc
+ information.
+ 
+ </summary>
+	<param name="swiftCode">the swift code to expand</param>
+	<param name="connectionString">The connection string to the db from which to lookup the swift code</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field.ExpandSwiftCode(System.String)">
+	<summary>
+ Expands the supplied SWIFT code into its bank name, address, street etc
+ information.
+ 
+ </summary>
+	<param name="swiftCode">the swift code to expand</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field.GetDefaultDbConnectionString">
+	<summary>
+ Enables a calling class to view the default connection string that can be used 
+ with instances of this class.
+ 
+ </summary>
+	<returns>the default connection string used by instances of class <code>Field</code></returns>
+	<remarks>
+ You can only specify which connection string you want to use if you create an instance
+ of the class Field.
+ </remarks>
+</member><member name="M:SwiftLib.Field.FormatFieldEntry(System.String,System.Int32)">
+	<summary>
+ Formats the given string into rows with the specified number of characters per line.
+ It returns an instance of the object <code>ReturnObject</code> which has properties that will
+ then be used to retrieve details of the formatted string.
+ There are properties for Lines() and Stri() that give access to the number of lines and the 
+ formatted string.
+ </summary>
+	<param name="entry">The string to be formatted.</param>
+	<param name="rowcharcount">The number of characters to be on a single line.</param>
+	<returns><code>ReturnObject</code></returns>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.Field.TagName">
+	<summary>
+ The tag name of the field.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:SwiftLib.Field71B">
+	<summary>
+ Charges
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field40E.Validate">
+	<summary>
+ Validates this field according to 30x[/35x] (Applicable Rules)(Narrative)
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field39A.Validate">
+	<summary>
+ Format: 2n/2n
+ 
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field71F.Parse_Expanded_Out(System.String)">
+	<summary>
+ Parses out the content of a MT103 file into the 
+ expanded format.
+ 
+ </summary>
+	<param name="content"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.Message.MessageCreatorName">
+	<summary>
+ Returns the name of the creator of the message.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.Message.DbConnectionString">
+	<summary>
+ The database connection string to use for retrieving information about SWIFT that you have stored in your enterprise.
+ It takes the connection string and uses it as an SqlConnection
+ </summary>
+	<value>the connection string. if null or empty the connection string is defaulted.</value>
+	<returns>the connection string</returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.#ctor">
+	<summary>
+ Default  no-args constructor.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.#ctor(System.String)">
+	<summary>
+ A constructor that adds a name to the message created.
+ </summary>
+	<param name="name">The name of the message e.g 103 if the message is a SWIFT MT of type 103 etc</param>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.ClearErrorMessageList">
+	<summary>
+ Clears all the messages of the errors retrieved from the
+ validation of the Fields of the Message.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.#ctor(System.String,System.Collections.SortedList,System.String)">
+	<summary>
+ Create an MT messsage by specifying the name of the message, an
+ instance of <code>SortedList</code> containing the list of <code>&gt;Field</code>.
+ objects that are contained in the message and the destination terminal address.
+ to which the message is to be sent.
+ </summary>
+	<param name="name">The name of the message e.g "MT103"</param>
+	<param name="fieldList">A list of Fields</param>
+	<param name="destination">The address to which the message is to be sent.</param>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.OnMessageErrorEvent(SwiftLib.MessageErrorEventArg)">
+	<summary>
+ A method to raise the MessageErrorEvent event.
+ </summary>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.Message.DestinationTerminal">
+	<summary>
+ The destination terminal address to which the message is to be sent.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.Message.SourceTerminal">
+	<summary>
+ The source terminal address to which the message.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.Message.Fields">
+	<summary>
+ A <code>SortedList</code> of <code>Field</code>s.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.Message.AllTagNames">
+	<summary>
+ Returns the list of tag names currently within this message.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.Message.Name">
+	<summary>
+ The name of the message.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.Message.Description">
+	<summary>
+ The description of the message.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.Render">
+	<summary>
+ A function that prints out the message content in the 
+ SWIFT format.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.Render(SwiftLib.Renderable.RenderingMode)">
+	<summary>
+ A function that prints out the message content in the 
+ SWIFT format.
+ </summary>
+	<param name="renderMode">The <code>Renderable.RenderingMode</code> to use when rendering</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.AddField(SwiftLib.Field)">
+	<summary>
+ A method for adding a <code>Field</code> to the list of fields of this
+ message.
+ </summary>
+	<param name="f">The <code>Field</code> to be added.</param>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.RemoveField(SwiftLib.Field)">
+	<summary>
+ Removes the specified field.
+ </summary>
+	<param name="f">he <code>Field</code> to be added.</param>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.ReadFromFile(System.String)">
+	<summary>
+ An abstract method to be implemented by implementing classes for reading the 
+ message content from the file, constructing the contained <code>Field</code>s
+ setting the appropriate field property values such as the destination terminal
+ address and whatever else needs to be done in the context of the specific
+ instance of <code>Message</code> that is being implemented.
+ </summary>
+	<param name="filename"></param>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.ReadFromString(System.String)">
+	<summary>
+ An abstract method to be implemented by implementing classes for reading the 
+ message content from the string, constructing the contained <code>Field</code>s
+ setting the appropriate field property values such as the destination terminal
+ address and whatever else needs to be done in the context of the specific
+ instance of <code>Message</code> that is being implemented.
+ </summary>
+	<param name="msgstr"></param>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.WriteToFile(System.String,SwiftLib.Renderable.RenderingMode)">
+	<summary>
+ Writes the rendered mode of this message to a file.
+ </summary>
+	<param name="path">the name of the file to write to. If it does not exist, it creates it.</param>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.Validate">
+	<summary>
+ Returns <code>TRUE</code> if the message's fields ALL conform to the syntax for the 
+ message or returns  <code>FALSE</code> otherwise.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.CreateFooter">
+	<summary>
+ 'Returns the footer string for this swift message type.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.CreateHeader(System.String)">
+	<summary>
+ 'Returns the swift header for this message type.
+ 
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.GetField(System.String,System.String)">
+	<summary>
+ Returns a <code>Field</code> identified by the tag supplied and whose content is the 
+ content parameter
+ </summary>
+	<param name="tag">the tag specified</param>
+	<param name="content">the content of the field</param>
+	<returns>a <code>Field</code> object</returns>
+	<remarks>version one use</remarks>
+</member><member name="M:SwiftLib.Message.ReadRecordFromFile(System.String)">
+	<summary>
+ Reads the tags of the specified file and then returns a Dictionary of 
+ tags as the key and the strings that follow them as also as a string.
+ </summary>
+	<param name="filename">The filename of the file from which you want to read.</param>
+	<returns>a dictionary of tags and the strings that follow them.</returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.ReadDestinationTermAddressFromFile(System.String)">
+	<summary>
+ Returns the destination termainal address of an MT message from the file specified.
+ 
+ </summary>
+	<param name="filename">The name fo the file to be read from.</param>
+	<returns>The destinal terminal address.</returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.ReadDestinationTermAddressFromString(System.String)">
+	<summary>
+ Returns the destination termainal address of an MT message from the string specified.
+ 
+ </summary>
+	<param name="swiftMsg">The name fo the string to be read from.</param>
+	<returns>The destinal terminal address.</returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.HandleAllFieldErrorEvents(System.Object,SwiftLib.FieldErrorEventArg)">
+	<summary>
+ This event handler  handles the FieldErrorEvents that occur when the 
+ Fields of the message are invalid.
+ It simply adds the messages from the event to the list of error messages for later
+ retrieval.
+ 
+ </summary>
+	<param name="sender">The source of the error</param>
+	<param name="e">The error event argument. It usually contains the error message.</param>
+	<remarks>Override in a child class to provide custom behaviour.</remarks>
+</member><member name="P:SwiftLib.Message.HasErrorMessages">
+	<summary>
+ This property should be accessed to determine whether the message has any 
+ error messages to be handled
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.Message.ErrorMessageList">
+	<summary>
+ Returns a copy of the error message list.
+ </summary>
+	<value></value>
+	<returns>a List(Of String) of messages.</returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Message.GetDefaultDbConnectionString">
+	<summary>
+ Enables a calling class to view the default connection string that can be used 
+ with instances of this class.
+ 
+ </summary>
+	<returns>the default connection string used by instances of class <code>Message</code></returns>
+	<remarks>
+ You can only specify which connection string you want to use if you create an instance
+ of the class Field.
+ </remarks>
+</member><member name="P:SwiftLib.Message.Item(System.String)">
+	<summary>
+ Returns a field based on the name of the field or returns Nothing if a FIeld with that 
+ tag is not found.
+ </summary>
+	<param name="tag">The tag e.g. "20" for Field20 etc.</param>
+	<value></value>
+	<returns>A <code>Field</code> instance that matches the specified tag name or an empty list if no such field is found.</returns>
+	<remarks></remarks>S
+
+</member><member name="T:SwiftLib.Message">
+	<summary>
+ Represents a SWIFT message.
+ For example a MT103, MT199 etc.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:SwiftLib.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:SwiftLib.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:SwiftLib.Field39B.Validate">
+	<summary>
+ Format: 2n/2n
+ 
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field71G.Parse_Expanded_Out(System.String)">
+	<summary>
+ Parses out the content of a MT103 file into the 
+ expanded format.
+ 
+ </summary>
+	<param name="content"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:SwiftLib.MessageErrorEventArg.Message">
+	<summary>
+ Sets or retrieves the message of the event.
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:SwiftLib.MessageErrorEventArg">
+	<summary>
+ This class represents an event argument for when a Message error event
+ has occurred.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Mt950Message.CreateHeader(System.String)">
+	<summary>
+ Returns the swift header for this message type.
+ 
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Field50.Validate">
+	<summary>
+ validates the content which can be  up to 4 lines of 35 characters each.
+ </summary>
+	<returns>
+	</returns>
+	<remarks></remarks>
+</member><member name="T:SwiftLib.Field50">
+	<summary>
+ Applicant (Name and Address). This field specifies the party on behalf of which the documentary credit is being issued.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Mt103Message.CreateHeader(System.String)">
+	<summary>
+ Returns the swift header for this message type.
+ 
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:SwiftLib.Mt700Message.CreateHeader(System.String)">
+	<summary>
+ Returns the swift header for this message type.
+ 
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:SwiftLib.Mt700Message">
+	<summary>
+ Issue of a documentary credit.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:SwiftLib.Field47A">
+	<summary>
+ Represents Additional Conditions.
+ 100 lines of 65 characters.
+ </summary>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

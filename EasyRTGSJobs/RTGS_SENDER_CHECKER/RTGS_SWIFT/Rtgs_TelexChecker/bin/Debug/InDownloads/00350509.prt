@@ -1,0 +1,63 @@
+
+
+
+08/05/14-10:40:46	            RtgsAck-0509-000519 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1056 140508NAMENGLAAXXX3285402717
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : FCMBNGLAXXX
+                  FIRST CITY MONUMENT BANK
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS82014551739
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 08 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #38,461,746.49#
+       50K: Ordering Customer-Name & Address
+            /0020521629
+            ENSG SALARY ACCOUNT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024763
+            FCMBNGLA
+            FIRST CITY MONUMENT BANK
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1267020010
+            ENUGU STATE GOVERNMENT -IGR
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF IFO ENUGU STATE GOVT
+	--------------------------- Message Trailer ------------------------	
+       {CHK:AD74E4092BD2}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 08/05/14 10:40:26
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3285402717}{4:{177:1405081056}{451:0}}

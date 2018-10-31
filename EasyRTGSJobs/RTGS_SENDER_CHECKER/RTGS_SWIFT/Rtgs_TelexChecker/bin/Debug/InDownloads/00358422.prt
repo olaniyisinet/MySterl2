@@ -1,0 +1,58 @@
+
+
+
+05/09/14-13:01:25	            RtgsAck-8422-002721 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1258 140905NAMENGLAAXXX3310431965
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : FCMBNGLAXXX
+                  FIRST CITY MONUMENT BANK
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS520149282838
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 05 September 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #50,700,000.00#
+       50K: Ordering Customer-Name & Address
+            /0010997508
+            PRIZE DESTRUCTIONERS NIG LTD.
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024763
+            FCMBNGLA
+            FIRST CITY MONUMENT BANK
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /2148950015
+            RANDOM OFFSHORE TRADE
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BNG RTGS TRF TO FCMB IFO RANDO
+            //M OFFSHORE TRADE BOO PRIZE DESTRU
+            //CTIONERS NIG LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:2B1F1962E3BD}
+       PKI Signature: MAC & PAC-Equivalent

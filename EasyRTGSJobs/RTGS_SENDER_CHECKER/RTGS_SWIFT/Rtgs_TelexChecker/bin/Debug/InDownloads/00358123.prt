@@ -1,0 +1,58 @@
+
+
+
+20/08/14-11:54:37	            RtgsAck-8123-002422 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1151 140820NAMENGLAAXXX3308428113
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ECOCNGLAXXX
+                  ECOBANK NIGERIA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS202014851739
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 20 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #17,500,000.00#
+       50K: Ordering Customer-Name & Address
+            /0010002510
+            TRIPPLE K INVESTMENT LIMITED
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024495
+            ECOCNGLA
+            ECOBANK NIGERIA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /2142078810
+            DRILLED TIGER CONSTRUCTION LTD
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS BOO TRIPPLE K INVESTMENT 
+            //LIMITED  IFO DRILLED TIGER CONSTR
+            //UCTION LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:542AD0F8B18E}
+       PKI Signature: MAC & PAC-Equivalent

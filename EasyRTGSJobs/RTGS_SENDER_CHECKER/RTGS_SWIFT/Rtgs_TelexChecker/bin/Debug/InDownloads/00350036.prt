@@ -1,0 +1,65 @@
+
+
+
+04/04/14-11:00:47	            RtgsAck-0036-000037 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1115 140404NAMENGLAAXXX3273394374
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : DBLNNGLAXXX
+                  DIAMOND BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS42014435610
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 04 April 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #10,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0023489508
+            DEPUTY GOVERNORS OFFICE PROJ.
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024426
+            DBLNNGLA
+            DIAMOND BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0042353446
+            DEPUTY GOVERNOR,S OFFICE PROJECT AC
+            COUNT
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/DEPUTY  GOVERNORS OFFICE PROJ
+            //ECT MONITORING ACCT
+	--------------------------- Message Trailer ------------------------	
+       {CHK:06F1D405D697}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 04/04/14 11:00:31
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3273394374}{4:{177:1404041115}{451:0}}

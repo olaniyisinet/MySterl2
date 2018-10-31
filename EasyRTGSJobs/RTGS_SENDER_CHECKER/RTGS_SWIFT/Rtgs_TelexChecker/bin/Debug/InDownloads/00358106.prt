@@ -1,0 +1,57 @@
+
+
+
+19/08/14-15:02:51	            RtgsAck-8106-002405 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1459 140819NAMENGLAAXXX3308427905
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : PRDTNGLAXXX
+                  SKYE BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS192014824271
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 19 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #81,484,924.00#
+       50K: Ordering Customer-Name & Address
+            /0001596303
+            AIICO INS PLC-UNCLAIMED DNDS
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000025698
+            PRDTNGLA
+            SKYE BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1790106315
+            FIRS COLLECTION ACCOUNT 283
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BNG RTGS TO SKYE BANK IFO FIRS
+            // TRANSFER B/O AIICO INS PLC
+	--------------------------- Message Trailer ------------------------	
+       {CHK:8C84C5B233B1}
+       PKI Signature: MAC & PAC-Equivalent

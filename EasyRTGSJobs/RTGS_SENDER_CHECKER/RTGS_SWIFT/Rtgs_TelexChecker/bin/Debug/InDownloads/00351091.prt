@@ -1,0 +1,58 @@
+
+
+
+10/06/14-13:24:37	            RtgsAck-1091-001101 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1320 140610NAMENGLAAXXX3295411643
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : GTBINGLAXXX
+                  GUARANTY TRUST BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS1020146171558
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 10 June 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #11,895,182.80#
+       50K: Ordering Customer-Name & Address
+            /0017764547
+            ARIAN CAPITAL MGT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024921
+            GTBINGLA
+            GUARANTY TRUST BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0004278921
+            PRIME WEALTH CAPITAL LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRF TO GTB IFO PRIMEWEALT
+            //H CAPITAL LTD BOO ARIAN CAPITAL M
+            //ANAGEMENT
+	--------------------------- Message Trailer ------------------------	
+       {CHK:58D21FAE2CAE}
+       PKI Signature: MAC & PAC-Equivalent

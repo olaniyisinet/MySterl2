@@ -1,0 +1,65 @@
+
+
+
+09/04/14-12:25:08	            RtgsAck-0103-000104 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1239 140409NAMENGLAAXXX3277395568
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : AFRNNGLAXXX
+                  MAINSTREET BANK LIMITED
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS920144572750
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 09 April 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #241,449,218.52#
+       50K: Ordering Customer-Name & Address
+            /0017394515
+            MARKET OPERATIONS CLEARNG ACCT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000023553
+            AFRNNGLA
+            MAINSTREET BANK LIMITED
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /7000009144
+            PHCN JEBBA POWER STATION SALARY AC
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF IFO JEBBA HYDRO ELECTRICMA
+            //INST 7000009144BOO MKT OPS CLRG A
+            //CCT
+	--------------------------- Message Trailer ------------------------	
+       {CHK:01FCB7CCC0E3}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 09/04/14 12:24:52
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3277395568}{4:{177:1404091239}{451:0}}

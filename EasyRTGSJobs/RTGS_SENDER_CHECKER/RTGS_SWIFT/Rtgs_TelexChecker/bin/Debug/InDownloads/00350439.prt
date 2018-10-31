@@ -1,0 +1,245 @@
+
+
+
+05/05/14-13:39:48	            RtgsAck-0439-000446 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1355 140505NAMENGLAAXXX3285401429
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ZEIBNGLAXXX
+                  ZENITH BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS52014526134
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 05 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #25,025,000.00#
+       50K: Ordering Customer-Name & Address
+            /0008691991
+            SIMRIA PROJECTS LIMITED
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026523
+            ZEIBNGLA
+            ZENITH BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1003314563
+            KOFI SAGOE
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRANSFER B/O SIMRIA PROJE
+            //CTS LTD IFO KOFI SAGOE
+	--------------------------- Message Trailer ------------------------	
+       {CHK:B7300B1117C8}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 05/05/14 13:39:22
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3285401429}{4:{177:1405051355}{451:0}}
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1355 140505NAMENGLAAXXX3285401430
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : UNAFNGLAXXX
+                  UNITED BANK FOR AFRICA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS520145544184
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 05 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #15,330,294.69#
+       50K: Ordering Customer-Name & Address
+            /0017491854
+            BAYELSA SUBEB SALARY ACCOUNTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026413
+            UNAFNGLA
+            UNITED BANK FOR AFRICA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1016330776
+            REMITTANCE TRANSIT ACCOUNT
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/APRIL 2014 SAL IRO UBA B/O BYS
+            //G SUBEB
+	--------------------------- Message Trailer ------------------------	
+       {CHK:076E190A729A}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 05/05/14 13:39:22
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3285401430}{4:{177:1405051355}{451:0}}
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1355 140505NAMENGLAAXXX3285401431
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ECOCNGLAXXX
+                  ECOBANK NIGERIA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS520145504777
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 05 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #50,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0001332723
+            ELIZADE NIGERIA LIMITED
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024495
+            ECOCNGLA
+            ECOBANK NIGERIA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0972000036
+            TOYOTA NIGERIA LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TO ECO IFO TOYOTA NIG LTD
+            // B/O ELIZADE NIG LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:EB7BB1EC0EDC}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 05/05/14 13:39:22
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3285401431}{4:{177:1405051355}{451:0}}
+		
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1355 140505NAMENGLAAXXX3285401434
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : UNAFNGLAXXX
+                  UNITED BANK FOR AFRICA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS520145222327
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 05 May 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #13,773,161.81#
+       50K: Ordering Customer-Name & Address
+            /0026111433
+            DEGEMA LOCAL GOVERNMENT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000026413
+            UNAFNGLA
+            UNITED BANK FOR AFRICA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /1016329576
+            REMITTANCE TRANSIT ACCOUNT
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRGS TRANSFER TO UBA IFO UBA R
+            //EMITTANCE TRANSIT ACCOUNT BOO DEG
+            //EMA LGA
+	--------------------------- Message Trailer ------------------------	
+       {CHK:B48E91167873}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 05/05/14 13:39:22
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3285401434}{4:{177:1405051355}{451:0}}

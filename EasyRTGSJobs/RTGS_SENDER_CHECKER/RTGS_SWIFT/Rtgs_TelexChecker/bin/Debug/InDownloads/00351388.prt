@@ -1,0 +1,65 @@
+
+
+
+27/06/14-15:03:30	            RtgsAck-1388-001398 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1500 140627NAMENGLAAXXX3297415964
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ICITNGLAXXX
+                  UNITY BANK PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS2720146255972
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 27 June 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #501,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0025481661
+            SAT LEASING COMPANY NIG LTD
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000025241
+            ICITNGLA
+            UNITY BANK PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0022136343
+            RULE GLOBAL SERVICES LIMITED
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRF BOO RULE GLOBAL SERVI
+            //CES LTD IFO RULE GLOBAL SERVICES 
+            //LTD
+	--------------------------- Message Trailer ------------------------	
+       {CHK:E48CAC5C9FF5}
+       PKI Signature: MAC & PAC-Equivalent
+	---------------------------- Interventions -------------------------	
+       Category      : Network Report
+       Creation Time : 27/06/14 15:03:10
+       Application   : SWIFT Interface
+       Operator      : SYSTEM
+       Text
+       {1:F21NAMENGLAAXXX3297415964}{4:{177:1406271500}{451:0}}

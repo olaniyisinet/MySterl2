@@ -1,0 +1,59 @@
+
+
+
+20/08/14-15:39:31	            RtgsAck-8134-002433 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1536 140820NAMENGLAAXXX3308428219
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : ECOCNGLAXXX
+                  ECOBANK NIGERIA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS2020148215265
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 20 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #83,160,000.00#
+       50K: Ordering Customer-Name & Address
+            /0018447315
+            TOP CROWN PETROLEUM LIMITED
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024495
+            ECOCNGLA
+            ECOBANK NIGERIA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0492003658
+            RAHAMANIYA OIL AND GAS LTD  ACCOUNT
+             II
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/BEING TRANSFER TO RAHAMANIYYA 
+            //OIL - GAS BOO. TOP CROWN PETROLEU
+            //M LIMITED
+	--------------------------- Message Trailer ------------------------	
+       {CHK:38B46BA351DB}
+       PKI Signature: MAC & PAC-Equivalent

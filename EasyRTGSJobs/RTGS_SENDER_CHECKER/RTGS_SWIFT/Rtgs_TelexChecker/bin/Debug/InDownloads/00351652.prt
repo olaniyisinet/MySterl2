@@ -1,0 +1,60 @@
+
+
+
+08/07/14-12:28:32	            RtgsAck-1652-001662 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1225 140708NAMENGLAAXXX3297418182
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : SBICNGLXXXX
+                  STANBIC IBTC BANK PLC
+                  (HEAD OFFICE)
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS82014757250
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 08 July 2014
+            Currency       : NGN (NAIRA)
+            Amount         :           #300,000,000.00#
+       50K: Ordering Customer-Name & Address
+            /0012371869
+            NNPC RETAIL LTD RMTCE(PENSION)
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000025296
+            SBICNGLX
+            STANBIC IBTC BANK PLC
+            (HEAD OFFICE)
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /0006238923
+            NIGERIAN NATIONAL PETROLEUM CORPORA
+            TION(REMITTANCE ACCOUNTS)
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/RTGS TRF B/O NNPC RETAIL IFO N
+            //NPC RMTC ACCT.  STANBIC IBTC
+	--------------------------- Message Trailer ------------------------	
+       {CHK:F6C5B528EF59}
+       PKI Signature: MAC & PAC-Equivalent

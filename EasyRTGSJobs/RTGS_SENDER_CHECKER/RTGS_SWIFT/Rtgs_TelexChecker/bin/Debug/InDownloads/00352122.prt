@@ -1,0 +1,58 @@
+
+
+
+04/08/14-14:24:33	            RtgsAck-2122-002134 	 1
+_______________________________________________________________________________
+	---------------------  Instance Type and Transmission --------------	
+       Notification (Transmission) of Original sent to SWIFT (ACK)
+       Network Delivery Status   : Network Ack 
+       Priority/Delivery         : Normal
+       Message Input Reference   : 1421 140804NAMENGLAAXXX3301423805
+	--------------------------- Message Header -------------------------	
+       Swift Input                   : FIN 103 Single Customer Credt Transfer
+       Sender   : NAMENGLAXXX 
+                  STERLING BANK PLC
+                  LAGOS NG
+       Receiver : FBNINGLAXXX
+                  FIRST BANK OF NIGERIA PLC
+                  LAGOS NG
+       FIN Copy Service : NGR
+	--------------------------- Message Text ---------------------------	
+        20: Sender's Reference
+            SRS420148363452
+       23B: Bank Operation Code
+            CRED
+       23E: Instruction Code
+            SDVA
+       26T: Transaction Type Code
+            001
+       32A: Val Dte/Curr/Interbnk Settld Amt
+            Date           : 04 August 2014
+            Currency       : NGN (NAIRA)
+            Amount         :            #48,719,788.69#
+       50K: Ordering Customer-Name & Address
+            /0017263813
+            SUB-TREASURY SALARY ACCOUNT
+       53A: Sender's Correspondent - FI BIC
+            /D/3000025911
+            NAMENGLA
+            STERLING BANK PLC
+            LAGOS  NG
+       57A: Account With Institution - FI BIC
+            /3000024749
+            FBNINGLA
+            FIRST BANK OF NIGERIA PLC
+            LAGOS  NG
+        59: Beneficiary Customer-Name & Addr
+            /2020793845
+            STATE CONSOLIDATED REVENUE ACCOUNT 
+            ZAMFARA STATE (IGR)
+       71A: Details of Charges
+            OUR
+        72: Sender to Receiver Information
+            /CODTYPTR/001
+            /BNF/TRF TO FBN IFO EXEC.CHIRM. B.I
+            //.R
+	--------------------------- Message Trailer ------------------------	
+       {CHK:0BAA483A165E}
+       PKI Signature: MAC & PAC-Equivalent
