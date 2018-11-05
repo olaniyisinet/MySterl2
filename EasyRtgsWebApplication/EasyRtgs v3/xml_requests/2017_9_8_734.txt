@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?><IBSRequest><ReferenceID>170908095021</ReferenceID><RequestType>105</RequestType><ReferenceID>621734</ReferenceID><ToAccount>1060084147</ToAccount><DestinationBankCode>076</DestinationBankCode></IBSRequest>

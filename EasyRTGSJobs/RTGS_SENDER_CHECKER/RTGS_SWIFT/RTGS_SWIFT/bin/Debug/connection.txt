@@ -1,1 +1,0 @@
-Data Source=10.0.0.124,1490;Initial Catalog=easyRTGSdb;user id=rtgs;password=(srtgs56*);Application Name=easyRTGSdbapp;

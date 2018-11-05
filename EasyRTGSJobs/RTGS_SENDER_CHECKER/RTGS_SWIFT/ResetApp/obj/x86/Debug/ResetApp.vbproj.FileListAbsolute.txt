@@ -1,8 +1,0 @@
-D:\ScheduledJobsT24\RTGS_SWIFT\ResetApp\bin\Debug\ResetApp.exe
-D:\ScheduledJobsT24\RTGS_SWIFT\ResetApp\bin\Debug\ResetApp.pdb
-D:\ScheduledJobsT24\RTGS_SWIFT\ResetApp\bin\Debug\ResetApp.xml
-D:\ScheduledJobsT24\RTGS_SWIFT\ResetApp\obj\x86\Debug\ResetApp.Resources.resources
-D:\ScheduledJobsT24\RTGS_SWIFT\ResetApp\obj\x86\Debug\ResetApp.vbproj.GenerateResource.Cache
-D:\ScheduledJobsT24\RTGS_SWIFT\ResetApp\obj\x86\Debug\ResetApp.exe
-D:\ScheduledJobsT24\RTGS_SWIFT\ResetApp\obj\x86\Debug\ResetApp.xml
-D:\ScheduledJobsT24\RTGS_SWIFT\ResetApp\obj\x86\Debug\ResetApp.pdb
